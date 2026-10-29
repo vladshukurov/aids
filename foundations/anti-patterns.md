@@ -15,8 +15,8 @@ Signs that a screen looks assembled instead of designed. Check your screenshot a
 ## Craft slips
 | Sign | Fix |
 |---|---|
-| Outline and filled icons mixed in one list | One family per screen: kit `Icon / *` (outline) or SF outline; filled only for categories in coloured plates |
-| Icon doesn't mean the row (eye for passcode, document for chat) | Pick by meaning: shield for passcode, question mark for help, bells for notifications |
+| Outline and filled icons mixed in one list | One family per screen: SF outline (`SF / *` without .fill). Kit `Icon / *` mixes filled and outline — use it only for chevrons, arrows, x, dots |
+| Icon doesn't mean the row (eye for passcode, document for chat) | Pick by meaning from the SF outline set: `SF / lock` passcode, `SF / bell` notifications, `SF / questionmark.circle` help, `SF / sun.max` appearance |
 | Label truncated or touching the pill edge | Shorten the copy (1–2 words), never shrink the type |
 | Suggestions row overflowing the screen | ≤ 2 suggestions on base screens, each ≤ 3 words |
 | Bottom chat overlapping the last content | Bottom space ≥ Bottom chat height (+8) |
