@@ -1,0 +1,26 @@
+# re:verse DS
+
+> An AI-ready mobile banking design system in Figma (file qUknPCIey4DG3PH19e1OmD). Agents assemble screens from local components and variables, following the rules and recipes below.
+
+## Start here
+- [Agent rules](CLAUDE.md): hard rules and the build workflow
+- [Figma ledger](state/figma-ledger.json): page, collection and component ids
+
+## Foundations
+- [Tokens](foundations/tokens.md): collections, naming, scopes, which token for which role
+- [Theming](foundations/theming.md): brand themes, light/dark, radii
+- [Typography](foundations/typography.md): text styles and when to use them
+- [Voice](foundations/voice.md): UI copy and Spirit tone of voice
+
+## Components
+- [Catalog](components/overview.md): every component, its synonyms and the file to read
+
+## Recipes
+- [Recipes index](recipes/overview.md): screen recipes (home, account, transfer, sheet, goal, budget, chat answer)
+
+## Scenarios
+- [Scenarios index](scenarios/overview.md): multi-screen flows from a brief
+
+## Optional
+- [Evals](evals/rubric.md): how an agent's screen is scored
+- [Research](research/ai-ready-ds-research.md): how AI-ready design systems work (Russian)

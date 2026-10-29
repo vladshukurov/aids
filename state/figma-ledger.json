@@ -1,0 +1,52 @@
+{
+  "fileKey": "qUknPCIey4DG3PH19e1OmD",
+  "updated": "2026-10-29",
+  "pages": {
+    "Cover": "14:987",
+    "Foundations": "14:988",
+    "Components": "0:1",
+    "Examples": "14:989",
+    "Polygon": "14:990",
+    "_internal": "11:46179",
+    "Archive · re:verse screens": "7:2822",
+    "Archive · Spirit chat": "7:2821"
+  },
+  "sections": {
+    "Components / Kit and guide": "7:1169",
+    "Components / chip (legacy suggest, Amount, Swap)": "7:1112",
+    "Components / Card": "14:992",
+    "Components / Chat": "14:993",
+    "Components / Chat · Answer parts": "14:994",
+    "Components / Icons · SF Symbols": "7:15982",
+    "Foundations / Theme preview · re:verse": "17:2",
+    "Foundations / Theme preview · Atlas": "17:102"
+  },
+  "collections": {
+    "Primitives / Color": "VariableCollectionId:10:987",
+    "Primitives / Type": "VariableCollectionId:10:1043",
+    "Type": "VariableCollectionId:10:1066",
+    "Platform": "VariableCollectionId:10:1082",
+    "Size": "VariableCollectionId:10:1086",
+    "Spirit persona": "VariableCollectionId:10:1109",
+    "Color": "VariableCollectionId:10:1117",
+    "Theme": "VariableCollectionId:16:2"
+  },
+  "theme": {
+    "modes": ["re:verse", "Atlas"],
+    "variables": ["color/action", "color/action on dark", "color/accent", "color/accent subtle", "radius/control", "radius/field", "radius/card", "radius/sheet", "font/text", "font/mono"]
+  },
+  "components": {
+    "Card": "7:15132",
+    "Card / Linked": "7:15381",
+    "Card / Art": "7:15485",
+    "Logo / Visa": "7:15483",
+    "Chat / Top bar": "7:6619",
+    "Chat / User message": "7:19737",
+    "Chat / Message": "7:18356",
+    "MD / Block": "7:18215",
+    "Suggest": "7:19705",
+    "Chip": "7:19724",
+    "action button": "7:20486",
+    "Answer parts frame": "7:3893"
+  }
+}
