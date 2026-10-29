@@ -8,10 +8,17 @@
 IMPORTANT: on every screen, first child, time 9:41. Never draw your own.
 
 ## TopBar
-Back or close on the left, optional `Avatar` on the right (property Avatar). Title text is not inside TopBar: put a title or hero in the content.
+| Property | Type | Default | Use |
+|---|---|---|---|
+| Back | boolean | true | chevron button on the left |
+| Right action | boolean | false | round icon button on the right (Secondary). Make it Primary only on a screen without a bottom Primary |
+| Avatar | boolean | false | profile photo on the right (home, account) |
+| Title (nested, exposed) | text | "Title" | mono caps, 1–2 words: "SEND", "CARD DETAILS". IMPORTANT: always set it or the audit flags a placeholder |
+| Subtitle (nested) | boolean | true | turn off unless the screen needs a second line |
+| Subtitle text (nested) | text | | |
 
 ## Title
-Mono screen title with optional Subtitle. Use for system-like screens (settings, sheets). Product screens use a hero instead (sentence or amount, `Title/Title 1`).
+The same mono title as a standalone component (under TopBar on settings-like screens). Properties: Title, Subtitle, Subtitle text.
 
 ## HomeIndicator
 Last child of every full screen. In sheets it sits at the sheet bottom.

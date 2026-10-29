@@ -8,7 +8,9 @@ Figma: `Avatar`, `Sublogo` · search: "avatar", "merchant icon", "currency icon"
 | Type | Avatar | People. `Style=Image` for a photo, `Style=Default` (initials) for people not on re:verse |
 | Type | Currency | Accounts by currency: `Style=Euro, Dollar, Pound, USDT, USDC` |
 | Type | Transaction | Merchants and categories: `Style=Food, Market, Home, Car, Netflix, Revolut, Coinbase, CashApp, Bells, Send, Plus, Re:verse` |
-| Sublogo | boolean | Bank badge in the corner |
+| Sublogo | boolean | Bank badge in the corner. IMPORTANT: default is on — turn it off for merchants and people not on re:verse |
+
+All Style values: Default, Image, Re:verse, Euro, Dollar, USDT, USDC, Pound, Send, Plus, Market, Food, Home, Car, Revolut, Bells, Netflix, Coinbase, CashApp.
 
 `Sublogo` set: `Type=Re:verse, Revolut, Coinbase, Cash App, ETH, TRX, Pocket`.
 

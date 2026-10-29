@@ -8,6 +8,7 @@ Read this file first. Then open `llms.txt` and read only the files your task nee
 - **Tokens:** local variable collections in that file. Never use a raw hex, size or font if a variable exists.
 - **Components:** local components in that file. Never draw a component by hand if one exists.
 - **Rules and recipes:** this repo. Figma descriptions are short; the md files are the full contract.
+- **Data:** `foundations/persona.md`. One person, one day; take every name and number from there.
 
 ## Workflow (every screen)
 1. Read the recipe in `recipes/` that matches the request. No recipe → read the nearest one and say so.

@@ -34,9 +34,17 @@ for (const t of f.findAllWithCriteria({ types: ['TEXT'] })) {
   if (/Re:verse|RE:VERSE|Re:Verse/.test(s)) errors.push(`brand must be lowercase: "${s.slice(0, 30)}" (${t.id})`);
   if (/\bSpirit\b/.test(s)) warnings.push(`"Spirit" in text — allowed only inside the chat: "${s.slice(0, 30)}" (${t.id})`);
 }
-// one Primary on light screens
-const primaries = f.findAll(n => n.type === 'INSTANCE' && n.componentProperties && Object.entries(n.componentProperties).some(([k, v]) => k === 'Type' && v.value === 'Primary') && !insideInstance(n));
-if (primaries.length > 1) errors.push(`${primaries.length} Primary buttons; max one`);
+// one visible Primary per screen, nested ones included (e.g. inside TopBar)
+const visibleChain = n => { let q = n; while (q && q !== f) { if (q.visible === false) return false; q = q.parent; } return true; };
+const primaries = [];
+for (const n of f.findAllWithCriteria({ types: ['INSTANCE'] })) {
+  if (!n.componentProperties || !visibleChain(n)) continue;
+  if (!Object.entries(n.componentProperties).some(([k, v]) => k === 'Type' && v.value === 'Primary')) continue;
+  const m = await n.getMainComponentAsync();
+  const set = m && m.parent && m.parent.type === 'COMPONENT_SET' ? m.parent.name : '';
+  if (set === 'Button') primaries.push(n.id);
+}
+if (primaries.length > 1) errors.push(`${primaries.length} visible Primary buttons (${primaries.join(', ')}); max one`);
 // status bar and home indicator
 const names = await Promise.all(f.findAllWithCriteria({ types: ['INSTANCE'] }).map(async i => { const m = await i.getMainComponentAsync(); return m ? (m.parent && m.parent.type === 'COMPONENT_SET' ? m.parent.name : m.name) : ''; }));
 if (!names.includes('StatusBar')) errors.push('no StatusBar');

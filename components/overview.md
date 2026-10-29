@@ -29,6 +29,7 @@ Search Figma by the name in the first column. Read the md file before using a co
 | Chat / Top bar | chat header | Header of the Spirit chat | [chat.md](chat.md) |
 | Chat / User message | user bubble | What the person said | [chat.md](chat.md) |
 | Chat / Message, Answer / *, MD / Block | Spirit answer, AI response | Building a Spirit answer | [chat.md](chat.md) |
+| Spirit / Chat background | chat background, glow | First child of every chat screen | [chat.md](chat.md) |
 | Icon / * | icon | 24 outline icons for rows and buttons | instance swap |
 | SF / * | SF Symbol | Category and action icons (outline and fill) | instance swap |
 

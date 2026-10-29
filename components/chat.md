@@ -3,7 +3,7 @@
 The chat is a dark screen (`Color` mode `dark`) over the Spirit gradient. Spirit is the AI assistant; it exists only here.
 
 ## Screen anatomy
-`StatusBar` → `Chat / Top bar` (topic title) → messages (vertical auto layout, 16 side padding) → suggestions row → `BottomBar` → `HomeIndicator`.
+Frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute at 0,0). Then `StatusBar` → `TopBar` or `Chat / Top bar` (topic title) → messages (vertical auto layout, 16 side padding) → suggestions row → `BottomBar` → `HomeIndicator`.
 
 ## One answer = vertical stack, itemSpacing 0, spacing via `Answer / Space`
 | Part | Component | Notes |

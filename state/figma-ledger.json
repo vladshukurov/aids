@@ -80,7 +80,8 @@
     "Sheet - Full Screen": "7:1745",
     "Top up / From": "7:1750",
     "Action / round": "7:15995",
-    "Action button": "7:20486"
+    "Action button": "7:20486",
+    "Spirit / Chat background": "31:5058"
   },
   "examples": {
     "Home feed_example": "21:26447",
@@ -88,9 +89,13 @@
     "Account_example": "21:26776",
     "Source picker_example": "21:27134",
     "Amount entry_example": "21:27409",
-    "Confirm_example": "21:27503",
+    "Confirm_example": "31:5165",
     "Chat · one fact_example": "21:27608",
     "Chat · numbers_example": "21:27681",
     "Chat · money check_example": "21:27763"
-  }
+  },
+  "notes": [
+    "Never hardcode style or variable ids; resolve by name (style ids end with a comma).",
+    "search_design_system returns nothing until the library is published; use the lookup script in build-screen SKILL.md."
+  ]
 }

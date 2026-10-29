@@ -4,11 +4,12 @@
 
 ## Start here
 - [Agent rules](CLAUDE.md): hard rules and the build workflow
-- [Figma ledger](state/figma-ledger.json): page, collection and component ids
+- [Persona and data](foundations/persona.md): the one person, accounts, people and numbers every screen uses
+- [Figma ledger](state/figma-ledger.json): page, collection, component and example ids
 
 ## Foundations
-- [Tokens](foundations/tokens.md): collections, naming, scopes, which token for which role
-- [Theming](foundations/theming.md): brand themes, light/dark, radii
+- [Tokens](foundations/tokens.md): collections, which token for which role, spacing, radius
+- [Theming](foundations/theming.md): brand themes (re:verse, Atlas), light/dark
 - [Typography](foundations/typography.md): text styles and when to use them
 - [Voice](foundations/voice.md): UI copy and Spirit tone of voice
 
@@ -16,11 +17,13 @@
 - [Catalog](components/overview.md): every component, its synonyms and the file to read
 
 ## Recipes
-- [Recipes index](recipes/overview.md): screen recipes (home, account, transfer, sheet, goal, budget, chat answer)
+- [Recipes index](recipes/overview.md): home feed, account, card screen, picker, send/top up (amount → confirm), Spirit chat answer
 
-## Scenarios
-- [Scenarios index](scenarios/overview.md): multi-screen flows from a brief
+## Skills
+- [build-screen](.claude/skills/build-screen/SKILL.md): one screen from a text request
+- [build-flow](.claude/skills/build-flow/SKILL.md): a flow from a brief
+- [audit-screen](.claude/skills/audit-screen/SKILL.md): check and fix a screen; script in `scripts/audit-screen.js`
 
 ## Optional
-- [Evals](evals/rubric.md): how an agent's screen is scored
+- [Evals](evals/rubric.md): how a screen is scored; [prompts](evals/prompts.md) to test with
 - [Research](research/ai-ready-ds-research.md): how AI-ready design systems work (Russian)

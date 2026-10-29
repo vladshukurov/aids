@@ -21,8 +21,9 @@ Use text styles. Never set font, size or line height by hand. Families come from
 | Control/Button/Regular, Small | 16/24, 14/18 Mono | Button labels (inside Button only) |
 | Control/Input/Regular, Label | 16/20, 12/14 | Inside Text Field / Select only |
 | Control/Chip | 14/18 Medium | Inside Chip / Suggest only |
-
-New screens (rules from 28.10): section title is 17 Medium `text/primary` in sentence case; the right side of a section header (total or link) is 15 Regular `text/secondary`; label above a hero is 15 Medium `text/secondary`, no caps.
+| Section/Title | 17/22 Medium | Section title on new screens, sentence case, `text/primary` |
+| Section/Aside | 15/20 Regular | Right side of a section header (total, "View all"), `text/secondary` |
+| Label/Hero | 15/20 Medium | Label above a hero number ("October · 12 days left"), `text/secondary`, no caps |
 
 ## Chat (dark)
 | Style | Use |
