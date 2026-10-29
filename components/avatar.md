@@ -7,7 +7,7 @@ Figma: `Avatar`, `Sublogo` · search: "avatar", "merchant icon", "currency icon"
 |---|---|---|
 | Type | Avatar | People. `Style=Image` for a photo, `Style=Default` (initials) for people not on re:verse |
 | Type | Currency | Accounts by currency: `Style=Euro, Dollar, Pound, USDT, USDC` |
-| Type | Transaction | Merchants and categories: `Style=Food, Market, Home, Car, Netflix, Revolut, Coinbase, CashApp, Bells, Send, Plus, Re:verse` |
+| Type | Transaction | Merchants and categories: `Style=Food, Market, Home, Car, Netflix, Revolut, Coinbase, CashApp, Bells, Send, Plus, Goal` (re:verse logo is `Type=Avatar, Style=Re:verse`) |
 | Sublogo | boolean | Bank badge in the corner. IMPORTANT: default is on — turn it off for merchants and people not on re:verse |
 
 Goals: `Style=Goal, Type=Transaction` (target icon). Style values exist only with their Type — set both together:
