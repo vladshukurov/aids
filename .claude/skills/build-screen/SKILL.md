@@ -1,68 +1,57 @@
 ---
 name: build-screen
-description: Build one mobile banking screen in the re:verse DS Figma file from a text request ("make a send-money screen", "card screen frozen", "Spirit answer about October spending"). Use for any single-screen request in this repo. Not for multi-screen flows from a brief (use build-flow) and not for reviewing an existing screen (use audit-screen).
+description: Design and build one mobile banking screen in the re:verse DS Figma file from a text request — including screens no recipe covers ("profile", "subscriptions", "card frozen", "Spirit answer about October"). Plans the composition first, builds from blocks, then iterates with an independent visual critic. Not for multi-screen flows (build-flow) or reviewing an existing screen (audit-screen).
 ---
 
 # Build a screen
 
+The goal is a screen that looks designed, not assembled. Rule compliance is the floor; the critic decides when it is good.
+
 ## 0. Setup (once per session)
-- Figma file key: `qUknPCIey4DG3PH19e1OmD`. Call `create_session` with it and pass the returned `sessionId` to every Figma call.
-- Load the Figma skills `figma-use` and `figma-generate-design` before the first `use_figma`: via `/figma-use`, `get_figma_skill`, or the MCP resource `skill://figma/<name>/SKILL.md` — whichever your environment has.
-- If there are two Figma MCP servers, run `whoami` on both and use the one with an editor seat on this file.
-- Read `CLAUDE.md`, `foundations/persona.md`, then `recipes/overview.md`.
+- Figma file `qUknPCIey4DG3PH19e1OmD`: `create_session`, pass `sessionId` to every Figma call. Load Figma skills `figma-use` and `figma-generate-design` (`/figma-use`, `get_figma_skill` or `skill://figma/<name>/SKILL.md`).
+- Two Figma MCP servers → `whoami` on both, use the one with an editor seat.
+- Read `CLAUDE.md`, `foundations/layout.md`, `foundations/anti-patterns.md`, `foundations/persona.md`, `components/blocks.md`, then the closest recipe in `recipes/overview.md` (if any).
 
-## 1. Plan on paper (in your reply, short)
-- Pick the recipe. Name it.
-- List the screen top to bottom: component + property values + text.
-- Take every number and name from `foundations/persona.md`; check before → after math.
+## 1. Plan (write it in your reply before any Figma call)
+1. Archetype (layout.md §2) and the product reference to compare with (`evals/references.md`).
+2. The six answers of layout.md §1: object, hero, actions, sections, state, next step.
+3. **ASCII sketch** with zone heights and gaps, e.g.
+```
+StatusBar 62 · TopBar 58 (Back, "CARD •••• 0020")
+── 40 ── Hero: Card L
+── 24 ── Actions: [Unfreeze] [Details] [···]
+── 48 ── Card: Card is frozen · … | Show PIN › | Limits › | Replace card ›
+── 48 ── Transactions · View all: Vapiano €31.50 | … (3 rows)
+Bottom chat: "Why was it declined?" "Freeze for how long?"
+```
+4. **Data inventory:** every row's title, caption and value from `persona.md`. Captions must state a fact or a consequence.
+5. **Plan review:** read the sketch against `anti-patterns.md`. Anything default, empty, one-row, invented or Spirit-named? Fix the plan, not the screen later.
 
-## 2. Find components, variables, styles
-The library is published (`libraryPublished` in the ledger), so start with **one batched** `search_design_system` call: one query per thing the recipe needs ("list row", "bottom sheet header", "Confirm_example", "text secondary", "Section title"). Results include descriptions — read them, they are the short contract. Search ranks by name and description, so check the top hit is the component you meant.
-- Working in this file: use the names from search and resolve the objects locally (script below).
-- Working in another file (a client polygon that uses this library): import by the keys search returns — `importComponentSetByKeyAsync(componentSetKey)`, `importComponentByKeyAsync(componentKey)`, `importVariableByKeyAsync(key)`, `importStyleByKeyAsync(key)`.
-If search returns nothing (library unpublished or not added), fall back to the lookup by name. One read call that gives you everything:
+## 2. Find components
+One batched `search_design_system` call (library is published): blocks first ("Block / List group", "Block / Hero amount"), then atoms. Results include descriptions — they are the short contract. Resolve objects by name inside your build script; never hardcode style or variable ids:
 ```js
-const comp = figma.root.children.find(p => p.name === 'Components'); await comp.loadAsync();
-const ex = figma.root.children.find(p => p.name === 'Examples'); await ex.loadAsync();
-const owners = [...comp.findAllWithCriteria({types:['COMPONENT_SET','COMPONENT']}), ...ex.findAllWithCriteria({types:['COMPONENT']})]
-  .filter(c => (c.type === 'COMPONENT_SET' || c.parent.type !== 'COMPONENT_SET') && !c.name.startsWith('_'));
-const vars = await figma.variables.getLocalVariablesAsync();
-const styles = await figma.getLocalTextStylesAsync();
-return {
-  components: owners.map(c => ({id: c.id, name: c.name, desc: c.description.slice(0, 120)})),
-  variables: vars.filter(v => !v.name.startsWith('neutral') ).map(v => v.name).length,
-  textStyles: styles.map(s => s.name)
-};
-```
-Then, inside your build script, resolve objects by name — never hardcode style or variable ids (style ids end with a comma and break when copied):
-```js
-const V = n => vars.find(v => v.name === n);            // e.g. V('background/primary'), V('space/16')
-const S = n => styles.find(s => s.name === n);          // then: await text.setTextStyleIdAsync(S('Body/Small').id)
-```
-Component property keys carry a suffix (`Label#4376:0`). Set them by prefix:
-```js
+const V = n => vars.find(v => v.name === n);   const S = n => styles.find(s => s.name === n);
 const setP = (inst, map) => { const keys = Object.keys(inst.componentProperties); const out = {};
   for (const [k, v] of Object.entries(map)) { const key = keys.find(x => x === k || x.startsWith(k + '#')); if (key) out[key] = v; }
   inst.setProperties(out); };
 ```
-Read `components/<name>.md` for every component you use for the first time.
+Exposed nested instances (Row 1–5 in a List group, Action 1/2, Header, Avatar and Toggle inside Cell) are found with `findOne(n => n.name === 'Row 1')` and set with `setP` on them. Icons: swap the icon inside an Avatar plate with an `SF / *` outline icon (one family per screen). Search all pages for icons — some live on `_internal`.
+Working in another file → import by the keys search returns (`importComponentSetByKeyAsync` …).
 
 ## 3. Build on page Polygon
-- Place the new frame to the right of existing frames, 120 gap (empty page: at 0,0). Name it `<Recipe> · <what>`.
-- Frame: 402×874, vertical auto layout, fill bound to `background/primary`, clip content. Chat screens: frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute, 0,0).
-- Only component instances and auto-layout wrapper frames; text you add yourself gets a text style and a `Color` text variable.
-- Text in instances: component properties via `setP`. Nested exposed instances (e.g. `Title` inside `TopBar`) appear in `componentProperties` of the parent too. If a text has no property, override `characters` on the nested text node (load its font first). Never detach.
-- Append to the auto-layout parent first, then set `layoutSizingHorizontal='FILL'`.
-- Gaps and padding: bind to `space/*`. No raw hex.
-- Build the whole screen in one `use_figma` call when possible; return created ids.
+- Frame 402 wide, vertical auto layout, `background/primary`, height 874 or taller if content needs it. Chat: `Color` mode dark + `Spirit / Chat background` first.
+- Blocks first: `Block / Hero amount` (or Card L / custom hero), `Block / Action row`, `Block / List group` ×2–4, `Block / Bottom chat` (absolute at the bottom; bottom space = its height − 40). Sheets: `Block / Option sheet` over the dimmed object screen.
+- Spacing exactly as layout.md §3 (40–60 / 24 / 48 / 12 / 20), bound to `space/*`.
+- One `use_figma` call for the whole screen; return the frame id.
 
-## 4. Check
-- Run `scripts/audit-screen.js` in its own `use_figma` call (it ends with `return`; paste the body, set `FRAME_ID`). Fix every error, then run it again.
-- If the audit flags something inside a component (not your screen), report it as a component bug; don't recolor the instance.
-- One screenshot: `await frame.screenshot({scale: 0.5})` inside `use_figma`, or `get_screenshot`. Look for clipped text, wrong mode, leftovers, Lead longer than 3 lines.
-- Report: recipe, components, audit result, rubric score (`evals/rubric.md`), anything you could not do or had to guess.
+## 4. Check, then critic
+1. Run `scripts/audit-screen.js` in its own call; fix every error.
+2. Screenshot at 0.5 and check `anti-patterns.md` yourself; fix obvious slips (truncation, overlaps, mixed icons).
+3. **Independent critic:** spawn the `screen-critic` agent with the frame id, archetype and reference. Never grade visual quality yourself — builders overrate their own work.
+4. Apply its fixes on a **copy** of the frame (`<name> · round N`), re-run the critic on the copy. Keep a round only if its average went up. Max 3 rounds; ship when every score ≥ 8.
+5. Report: plan, components, audit result, critic scores per round, what you could not do or guessed.
 
 ## Never
-- Draw a component by hand when one exists. Draw shapes for glow or gradients.
-- Add a success screen. Name "Spirit" outside the chat.
-- Use green for anything but incoming money.
+- Draw a component, icon, glow or gradient by hand when one exists.
+- Add a success screen. Name "Spirit" outside the chat. Use green for anything but incoming money.
+- Leave a spacer pushing a button down on an Object screen, or a one-row section.
