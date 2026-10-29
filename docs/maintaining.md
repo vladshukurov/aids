@@ -28,6 +28,12 @@
 3. `npm run lint && npm run check`, затем `run-evals`.
 4. Запишите изменение в `CHANGELOG.md`.
 
+## Изменили рендерер
+1. Правка в `scripts/figma/render.js`.
+2. `node scripts/build-call.mjs <любая спека> --patch-from <хеш из state/renderer.installed.txt>` создаёт `.out/patch.js` размером 1–3 тысячи символов. Запустите его одним вызовом `use_figma`. Если копии старой версии нет, запускайте `.out/install.js`: это полная установка, около 37 тысяч символов.
+3. Скопируйте `.out/renderer-<новый хеш>.txt` в `state/renderer.installed.txt` (первая строка — хеш) и закоммитьте: так следующий человек сможет сделать патч.
+4. Пересоберите эталонные спеки (`--replace`) и сравните скриншоты.
+
 ## Добавили тип экрана
 Рецепт `recipes/<name>.md`, эталонная спека `specs/examples/<name>.json`, строка в `recipes/overview.md` и промпт в `evals/prompts.md`. Если нужен новый блок, сначала соберите компонент в Figma (раздел Blocks), затем научите рендерер его ставить.
 

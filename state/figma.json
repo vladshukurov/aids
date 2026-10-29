@@ -95,6 +95,27 @@
   "notes": [
     "Hand-kept map of pages, sections and examples. Component ids, keys and properties live in state/library.json (generated).",
     "photos: person name → id of a layer whose IMAGE fill is that person's photo. The renderer copies it into Avatar Style=Image. Fill it once (sync-library skill, step 4).",
-    "Screens built on Polygon are not tracked here: their ids go into the scenario md or evals/log.md."
-  ]
+    "Screens built on Polygon are not tracked here: their ids go into the scenario md or evals/log.md.",
+    "golden: frames rendered from specs/examples and scenarios/*.json on 29 Oct (renderer 015658da2d3d). Critics compare against these."
+  ],
+  "golden": {
+    "section · base": "79:1813",
+    "section · send + freeze card": "83:2408",
+    "section · chat": "84:3392",
+    "Profile": "82:2211",
+    "Notifications": "82:2961",
+    "USD account": "82:3520",
+    "Profile · Atlas": "89:3838",
+    "Send · confirm": "86:3837",
+    "Send · pay from": "86:3988",
+    "C1 · Card frozen": "86:4358",
+    "C2 · Block card?": "86:5052",
+    "C3 · Order a new card": "86:5664",
+    "C4 · Card after": "86:5988",
+    "Chat · one fact": "86:6530",
+    "Chat · numbers": "86:6627",
+    "Chat · money check": "86:6739",
+    "Chat · money check · caregiver": "86:6952",
+    "Chat · after the top-up": "86:7135"
+  }
 }

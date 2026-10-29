@@ -72,6 +72,9 @@ export function lintSpec(sp, ctx) {
     pushText(where + ' title', r.title); pushText(where + ' caption', r.caption); pushText(where + ' amount', r.amount);
     if (r.amount && r.chevron) err(`${where} "${r.title}": a row with an amount has no chevron`);
     if (r.caption && WEAK_CAPTION.test(r.caption.trim())) wrn(`${where} "${r.title}": caption "${r.caption}" says nothing — state a fact or a consequence`);
+    // mono captions are wide: past these lengths they wrap to a second line (measured on 402 frames)
+    const room = { toggle: 28, select: 28, money: 26, copy: 24, person: 26 }[k] || 32;
+    if (r.caption && r.caption.length > room) wrn(`${where} "${r.title}": caption is ${r.caption.length} chars and wraps (max ~${room} for a ${k} row) — shorten it`);
     if (!r.caption && ['state', 'action'].includes(k) && !inChat) wrn(`${where} "${r.title}": no caption — the current value or the consequence makes the row informative`);
     if (k === 'state' && r.chevron) err(`${where} "${r.title}": state rows have no chevron`);
     if (r.select && r.selectSide === 'left') err(`${where}: checkboxes and radios sit on the right`);

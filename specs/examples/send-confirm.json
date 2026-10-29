@@ -6,36 +6,118 @@
       "name": "Send · confirm",
       "archetype": "confirm",
       "caption": "Confirm before money moves: from, to, amount and what it costs. Anna is on re:verse, so no Face ID.",
-      "topbar": { "title": "SEND", "back": true },
+      "topbar": {
+        "title": "SEND",
+        "back": true
+      },
       "body": [
-        { "fromTo": {
-          "from": { "title": "Main account", "caption": "€1,340.00", "avatar": { "currency": "Euro" } },
-          "to": { "title": "Anna Costa", "caption": "On re:verse · by phone", "avatar": { "person": "Anna Costa" } }
-        } },
-        { "hero": "amount", "label": "You send", "amount": "€40.00", "caption": "Free · arrives instantly · Main after €1,300.00" }
+        {
+          "fromTo": {
+            "from": {
+              "title": "Main account",
+              "caption": "€1,340.00",
+              "avatar": {
+                "currency": "Euro"
+              },
+              "kind": "action"
+            },
+            "to": {
+              "title": "Anna Costa",
+              "caption": "On re:verse · by phone",
+              "avatar": {
+                "person": "Anna Costa"
+              }
+            }
+          }
+        },
+        {
+          "hero": "amount",
+          "label": "You send",
+          "amount": "€40.00",
+          "caption": "Free · arrives instantly · Main after €1,300.00"
+        }
       ],
-      "bottom": { "cta": "Send €40" },
-      "links": [{ "from": "row:Main account", "to": "send-pay-from" }]
+      "bottom": {
+        "cta": "Send €40"
+      },
+      "links": [
+        {
+          "from": "row:Main account",
+          "to": "send-pay-from"
+        }
+      ]
     },
     {
       "id": "send-pay-from",
       "name": "Send · pay from",
       "archetype": "sheet",
       "caption": "Tapping the source opens a choice with consequences: a sheet of accounts with balances. Pounds is empty, so it says so.",
-      "topbar": { "title": "SEND", "back": true },
+      "topbar": {
+        "title": "SEND",
+        "back": true
+      },
       "body": [
-        { "fromTo": {
-          "from": { "title": "Main account", "caption": "€1,340.00", "avatar": { "currency": "Euro" } },
-          "to": { "title": "Anna Costa", "caption": "On re:verse · by phone", "avatar": { "person": "Anna Costa" } }
-        } },
-        { "hero": "amount", "label": "You send", "amount": "€40.00", "caption": "Free · arrives instantly · Main after €1,300.00" }
+        {
+          "fromTo": {
+            "from": {
+              "title": "Main account",
+              "caption": "€1,340.00",
+              "avatar": {
+                "currency": "Euro"
+              }
+            },
+            "to": {
+              "title": "Anna Costa",
+              "caption": "On re:verse · by phone",
+              "avatar": {
+                "person": "Anna Costa"
+              }
+            }
+          }
+        },
+        {
+          "hero": "amount",
+          "label": "You send",
+          "amount": "€40.00",
+          "caption": "Free · arrives instantly · Main after €1,300.00"
+        }
       ],
-      "overlay": { "sheet": { "title": "Pay from", "action": "Pay from Main", "options": [
-        { "title": "Main account", "caption": "€1,340.00", "avatar": { "currency": "Euro" }, "selected": true },
-        { "title": "USD account", "caption": "$313.00 · converted at today's rate", "avatar": { "currency": "Dollar" } },
-        { "title": "Pounds account", "caption": "£0.00 · not enough money", "avatar": { "currency": "Pound" } }
-      ] } },
-      "links": [{ "from": "cta", "to": "send-confirm" }]
+      "overlay": {
+        "sheet": {
+          "title": "Pay from",
+          "action": "Pay from Main",
+          "options": [
+            {
+              "title": "Main account",
+              "caption": "€1,340.00",
+              "avatar": {
+                "currency": "Euro"
+              },
+              "selected": true
+            },
+            {
+              "title": "USD account",
+              "caption": "$313.00 · converted to €",
+              "avatar": {
+                "currency": "Dollar"
+              }
+            },
+            {
+              "title": "Pounds account",
+              "caption": "£0.00 · not enough money",
+              "avatar": {
+                "currency": "Pound"
+              }
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "from": "cta",
+          "to": "send-confirm"
+        }
+      ]
     }
   ]
 }

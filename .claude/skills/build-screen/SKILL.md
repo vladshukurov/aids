@@ -31,7 +31,7 @@ Bottom chat: "Undo" "I lost my card"
 1. Copy the closest spec from `specs/examples/` to `specs/work/<id>.json` and write yours (`specs/format.md`).
 2. `node scripts/lint-spec.mjs specs/work/<id>.json` → 0 errors. Treat warnings as questions you must answer.
 3. `node scripts/build-call.mjs specs/work/<id>.json --section "Polygon · <task> · <date>"`.
-4. Read `.out/call.js` and pass it whole as `code` to one `use_figma` call (`skillNames: "figma-use"`).
+4. Read `.out/call.js` and pass it whole as `code` to one `use_figma` call (`skillNames: "figma-use"`). If it answers `needsInstall`, the file has an older renderer: rebuild with `--patch-from <installed>` and run `.out/patch.js` (or `.out/install.js` when no local copy of the old version exists), then the call again.
 5. Read the result: `screens[].frame` ids, inline screenshots, `log`. Every log line is a defect: missing component/property → `sync-library` or a renderer fix; unknown icon → pick from `components/icons.md`. Re-render with `--replace` after fixing.
 
 ## 3. Check

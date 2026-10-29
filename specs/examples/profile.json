@@ -12,13 +12,13 @@
       { "title": "Address", "caption": "Torstraße 102, 10119 Berlin", "avatar": { "icon": "house" } }
     ] },
     { "group": "Security", "rows": [
-      { "title": "Face ID", "caption": "Asked when money leaves re:verse", "toggle": true, "avatar": { "icon": "faceid" } },
+      { "title": "Face ID", "caption": "When money leaves re:verse", "toggle": true, "avatar": { "icon": "faceid" } },
       { "title": "Passcode", "caption": "6 digits", "avatar": { "icon": "lock" } },
       { "title": "Devices", "caption": "iPhone 16 · iPad Air", "avatar": { "icon": "iphone" } },
       { "title": "Log out", "caption": "On this iPhone", "chevron": false, "avatar": { "icon": "rectangle.portrait.and.arrow.right" } }
     ] },
     { "group": "App", "rows": [
-      { "title": "Notifications", "caption": "Payments and limits · statements on the 1st", "avatar": { "icon": "bell" } },
+      { "title": "Notifications", "caption": "Payments, limits, statements", "avatar": { "icon": "bell" } },
       { "title": "Appearance", "caption": "System", "avatar": { "icon": "sun.max" } },
       { "title": "Language", "caption": "English", "avatar": { "icon": "globe" } }
     ] }

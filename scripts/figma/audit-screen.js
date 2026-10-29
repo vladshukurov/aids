@@ -23,8 +23,8 @@ for (const id of FRAME_IDS) {
   for (const n of f.findAll(() => true)) {
     if (n.type === 'INSTANCE' && !inInst(n)) instances++;
     if (inInst(n)) continue;
-    if (n.type !== 'INSTANCE') own++;
     const isSpacer = n.type === 'FRAME' && /^space\b/.test(n.name);
+    if (n.type !== 'INSTANCE' && !isSpacer) own++;
     for (const key of ['fills', 'strokes']) if (key in n && Array.isArray(n[key])) for (const p of n[key])
       if (p.type === 'SOLID' && p.visible !== false && !(p.boundVariables && p.boundVariables.color)) E.push(`raw ${key.slice(0, -1)} on ${n.type} "${n.name}" (${n.id})`);
     if (n.type === 'TEXT' && !n.textStyleId) E.push(`text without style "${n.characters.slice(0, 24)}" (${n.id})`);
@@ -38,7 +38,7 @@ for (const id of FRAME_IDS) {
         else if (!bv[k]) W.push(`${k} ${v} not bound to space/* "${n.name}" (${n.id})`);
       }
     }
-    if ('cornerRadius' in n && n !== f && typeof n.cornerRadius === 'number' && n.cornerRadius > 0 && !(n.boundVariables && (n.boundVariables.topLeftRadius || n.boundVariables.cornerRadius)))
+    if (n.type !== 'INSTANCE' && 'cornerRadius' in n && n !== f && typeof n.cornerRadius === 'number' && n.cornerRadius > 0 && !(n.boundVariables && (n.boundVariables.topLeftRadius || n.boundVariables.cornerRadius)))
       W.push(`radius ${n.cornerRadius} not bound to a Theme radius "${n.name}" (${n.id})`);
   }
   // copy rules on every visible text, instances included

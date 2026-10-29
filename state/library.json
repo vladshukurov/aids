@@ -1,172 +1,1235 @@
 {
-  "fileKey": "qUknPCIey4DG3PH19e1OmD",
-  "generated": null,
-  "source": "seed from the old hand ledger; regenerate with the sync-library skill",
-  "components": {
-    "Card": {
-      "id": "7:15132"
-    },
-    "Card / Linked": {
-      "id": "7:15381"
-    },
-    "Card / Art": {
-      "id": "7:15485"
-    },
-    "Logo / Visa": {
-      "id": "7:15483"
-    },
-    "Chat / Top bar": {
-      "id": "7:6619"
-    },
-    "Chat / User message": {
-      "id": "7:19737"
-    },
-    "Chat / Message": {
-      "id": "7:18356"
-    },
-    "MD / Block": {
-      "id": "7:18215"
-    },
-    "Suggest": {
-      "id": "7:19705"
-    },
-    "Chip": {
-      "id": "7:19724"
-    },
-    "Answer parts frame": {
-      "id": "7:3893"
-    },
-    "Button": {
-      "id": "7:1182"
-    },
-    "Cell": {
-      "id": "7:1482"
-    },
-    "Cell Small": {
-      "id": "7:1513"
-    },
-    "Avatar": {
-      "id": "7:1557"
-    },
-    "Sublogo": {
-      "id": "7:1523"
-    },
-    "Text Field": {
-      "id": "7:1630"
-    },
-    "Select": {
-      "id": "7:1695"
-    },
-    "TopBar": {
-      "id": "7:1433"
-    },
-    "Title": {
-      "id": "7:1440"
-    },
-    "BottomBar": {
-      "id": "7:1444"
-    },
-    "SheetBar": {
-      "id": "7:1460"
-    },
-    "StatusBar": {
-      "id": "7:1247"
-    },
-    "HomeIndicator": {
-      "id": "7:1245"
-    },
-    "Keyboard": {
-      "id": "7:1249"
-    },
-    "Amount": {
-      "id": "7:1135"
-    },
-    "Segmented control": {
-      "id": "7:1421"
-    },
-    "Sheet - Full Screen": {
-      "id": "7:1745"
-    },
-    "Top up / From": {
-      "id": "7:1750"
-    },
-    "Action / round": {
-      "id": "7:15995"
-    },
-    "Action button": {
-      "id": "7:20486"
-    },
-    "Spirit / Chat background": {
-      "id": "31:5058"
-    },
-    "Answer / Check": {
-      "id": "7:3940"
-    },
-    "Answer / Lead": {
-      "id": "51:2162"
-    },
-    "Answer / Ask": {
-      "id": "7:3938"
-    },
-    "Avatar · Style=Goal": {
-      "id": "38:27912"
-    },
-    "_Answer / Lead (legacy)": {
-      "id": "7:3901"
-    },
-    "Toggle": {
-      "id": "47:1494"
-    },
-    "Selection control": {
-      "id": "47:1503"
-    },
-    "Progress": {
-      "id": "47:1533"
-    },
-    "Section header": {
-      "id": "47:1534"
-    },
-    "Badge": {
-      "id": "47:1547"
-    },
-    "Divider": {
-      "id": "47:1552"
-    },
-    "Empty state": {
-      "id": "48:1482"
-    },
-    "Alert": {
-      "id": "48:1538"
-    },
-    "Search field": {
-      "id": "48:1547"
-    },
-    "Avatar group": {
-      "id": "48:1589"
-    },
-    "Page dots": {
-      "id": "48:1602"
-    },
-    "Cell / Skeleton": {
-      "id": "48:1603"
-    },
-    "Block / Hero amount": {
-      "id": "57:1518"
-    },
-    "Block / Action row": {
-      "id": "57:1558"
-    },
-    "Block / List group": {
-      "id": "57:1559"
-    },
-    "Block / Bottom chat": {
-      "id": "58:1586"
-    },
-    "Block / Option sheet": {
-      "id": "58:1612"
-    }
+ "fileKey": "qUknPCIey4DG3PH19e1OmD",
+ "generated": "2026-10-29T13:04:11.954Z",
+ "source": "scripts/figma/dump-library.js",
+ "components": {
+  "Amount": {
+   "page": "Components",
+   "id": "7:1135",
+   "key": "0a070f884de63068eca76b3f84b5069f59a7eb58",
+   "set": false,
+   "section": "02 · Money input",
+   "props": {},
+   "nested": []
   },
-  "icons": {},
-  "variables": {},
-  "textStyles": []
+  "Swap": {
+   "page": "Components",
+   "id": "7:1168",
+   "key": "ebe6adb8d0e86f625219b874d3f9fe5a8069e573",
+   "set": false,
+   "section": "02 · Money input",
+   "props": {},
+   "nested": []
+  },
+  "Button": {
+   "page": "Components",
+   "id": "7:1182",
+   "key": "c63fd8f8e148188f5f049424d92c543e1cd0dcca",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Label": "TEXT",
+    "Icon Left": "BOOLEAN",
+    "Icon Right": "BOOLEAN",
+    "→ Icon Left": "SWAP",
+    "→ Icon Right": "SWAP",
+    "Type": "Primary|Secondary|Ghost|Error",
+    "Size": "l|m|s"
+   },
+   "nested": []
+  },
+  "HomeIndicator": {
+   "page": "Components",
+   "id": "7:1245",
+   "key": "3d65dee6e1079bd4976f8331bd41ef77fdf9a0af",
+   "set": false,
+   "section": "01 · Core",
+   "props": {},
+   "nested": []
+  },
+  "StatusBar": {
+   "page": "Components",
+   "id": "7:1247",
+   "key": "c2f16e29cc01226fad21c5efc32c4cb65868eb3c",
+   "set": false,
+   "section": "01 · Core",
+   "props": {},
+   "nested": []
+  },
+  "Keyboard": {
+   "page": "Components",
+   "id": "7:1249",
+   "key": "99377965b470d25c2b79dad9990e093aba7e7a1d",
+   "set": false,
+   "section": "01 · Core",
+   "props": {},
+   "nested": [
+    "Keyboard Body"
+   ]
+  },
+  "_Keyboard body": {
+   "page": "Components",
+   "id": "7:1251",
+   "key": "a5c1ee72184f53e4dc3919183470dfb5e9eb772c",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Platform": "iOS|Android",
+    "Type": "Default|Numeric"
+   },
+   "nested": []
+  },
+  "_HomeIndicator body": {
+   "page": "Components",
+   "id": "7:1303",
+   "key": "b611d03e586905ab03404958f5808ed9ad7e96cf",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Platform": "iOS|Android"
+   },
+   "nested": []
+  },
+  "_StatusBar body": {
+   "page": "Components",
+   "id": "7:1313",
+   "key": "b118d04b06322a347206c13ed478a11accd62f96",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Platform": "iOS|Android"
+   },
+   "nested": []
+  },
+  "_Segment item": {
+   "page": "Components",
+   "id": "7:1416",
+   "key": "46c78728a716e9aca4569f5f06683476ebf59d76",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Active": "No|Yes"
+   },
+   "nested": []
+  },
+  "Segmented control": {
+   "page": "Components",
+   "id": "7:1421",
+   "key": "fc5db42c5fa5d8919427058c3192457e3c9dfe3d",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Item 1": "BOOLEAN",
+    "Item 2": "BOOLEAN",
+    "Item 3": "BOOLEAN",
+    "Item 4": "BOOLEAN",
+    "Item 5": "BOOLEAN",
+    "Item 6": "BOOLEAN",
+    "Theme": "Default"
+   },
+   "nested": []
+  },
+  "TopBar": {
+   "page": "Components",
+   "id": "7:1433",
+   "key": "544444d6ff23877fb4daff87fb20f4a345c38345",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Back": "BOOLEAN",
+    "Right action": "BOOLEAN",
+    "Avatar": "BOOLEAN",
+    "Type": "Default"
+   },
+   "nested": [
+    "Title"
+   ]
+  },
+  "Title": {
+   "page": "Components",
+   "id": "7:1440",
+   "key": "826cdabd83217b3d8aa6cd09bd851c51fd5169e3",
+   "set": false,
+   "section": "01 · Core",
+   "props": {
+    "Title": "TEXT",
+    "Subtitle text": "TEXT",
+    "Subtitle": "BOOLEAN"
+   },
+   "nested": []
+  },
+  "BottomBar": {
+   "page": "Components",
+   "id": "7:1444",
+   "key": "f14738e5bc4ca374a4ac026d0411f102acca3575",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Suggestions": "BOOLEAN",
+    "Send Button": "BOOLEAN",
+    "Type": "Default"
+   },
+   "nested": []
+  },
+  "SheetBar": {
+   "page": "Components",
+   "id": "7:1460",
+   "key": "ed0abb96e30622e2f2d05b7c036902ed48bc61bb",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Title": "TEXT",
+    "Type": "Default|Title"
+   },
+   "nested": []
+  },
+  "Cell": {
+   "page": "Components",
+   "id": "7:1482",
+   "key": "48d34b54d6ae532262a50009713791dc3517a00f",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Badge": "BOOLEAN",
+    "Toggle": "BOOLEAN",
+    "Checkbox Right": "BOOLEAN",
+    "Right": "BOOLEAN",
+    "Cell Name": "TEXT",
+    "Caption": "TEXT",
+    "Amount": "TEXT",
+    "Caption Right": "TEXT",
+    "Button": "BOOLEAN",
+    "Checkbox Left": "BOOLEAN",
+    "Chevron": "BOOLEAN",
+    "Caption Left": "BOOLEAN",
+    "Caption Right 2": "BOOLEAN",
+    "Type": "Default"
+   },
+   "nested": [
+    "Selection Left",
+    "Avatar",
+    "Sublogo",
+    "Badge",
+    "Selection",
+    "Toggle"
+   ]
+  },
+  "Cell Small": {
+   "page": "Components",
+   "id": "7:1513",
+   "key": "d5295718f2cc956c953f542beead03ae6a833b89",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Icon": "SWAP",
+    "Icon2": "BOOLEAN",
+    "Checkbox": "BOOLEAN",
+    "Chevron": "BOOLEAN",
+    "Type": "Default"
+   },
+   "nested": [
+    "Selection"
+   ]
+  },
+  "Sublogo": {
+   "page": "Components",
+   "id": "7:1523",
+   "key": "439f063c242a20f666eb48b450c96e6f64348c65",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Type": "Re:verse|Cash App|ETH|TRX|Revolut|Pocket|Coinbase"
+   },
+   "nested": []
+  },
+  "Avatar": {
+   "page": "Components",
+   "id": "7:1557",
+   "key": "c24fa6fafb926dfec840424a425ec74aac7ce860",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Sublogo": "BOOLEAN",
+    "Style": "Default|Image|Re:verse|Euro|Dollar|USDT|USDC|Send|Plus|Market|Food|Home|Car|Revolut|Bells|Netflix|Coinbase|CashApp|Pound|Goal",
+    "Type": "Avatar|Currency|Transaction"
+   },
+   "nested": [
+    "Sublogo"
+   ]
+  },
+  "Text Field": {
+   "page": "Components",
+   "id": "7:1630",
+   "key": "eac91e21fab5179bbbc710ebdecd8b08446a67d7",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Description": "BOOLEAN",
+    "Placeholder": "TEXT",
+    "Label": "TEXT",
+    "Caption": "TEXT",
+    "QR": "BOOLEAN",
+    "State": "Default|Focus|Typing|Entered|Error"
+   },
+   "nested": []
+  },
+  "Select": {
+   "page": "Components",
+   "id": "7:1695",
+   "key": "17b24e64653863df1f4cacf8a86ea36fd7a9f944",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Description": "BOOLEAN",
+    "Placeholder": "TEXT",
+    "Label": "TEXT",
+    "Caption": "TEXT",
+    "State": "Default|Focus|Typing|Entered"
+   },
+   "nested": []
+  },
+  "Sheet - Full Screen": {
+   "page": "Components",
+   "id": "7:1745",
+   "key": "7bcbbbd60d29eb3c609b566ba9184bbff46b7890",
+   "set": true,
+   "section": "01 · Core",
+   "props": {
+    "Keyboard": "BOOLEAN",
+    "Swap": "SWAP",
+    "Type": "Default"
+   },
+   "nested": [
+    "SheetBar",
+    "Keyboard"
+   ]
+  },
+  "Card": {
+   "page": "Components",
+   "id": "7:15132",
+   "key": "c136062efab044e7a21f736cfa3283b3cd6f65b3",
+   "set": true,
+   "section": "04 · Card",
+   "props": {
+    "Last 4": "TEXT",
+    "Short number": "TEXT",
+    "Balance": "TEXT",
+    "Balance caption": "TEXT",
+    "Card number": "TEXT",
+    "Expiry": "TEXT",
+    "CVV": "TEXT",
+    "Virtual": "BOOLEAN",
+    "Frozen": "BOOLEAN",
+    "Show details": "BOOLEAN",
+    "Layout": "E|F",
+    "Network": "Mastercard|Visa",
+    "Size": "L|M|S|XS"
+   },
+   "nested": [
+    "Art"
+   ]
+  },
+  "Card / Linked": {
+   "page": "Components",
+   "id": "7:15381",
+   "key": "8e0a26fe0d371fdb9e7808282946633b2eee55c5",
+   "set": true,
+   "section": "04 · Card",
+   "props": {
+    "Last 4": "TEXT",
+    "Bank": "Chase|Revolut|Cash App|Coinbase|Other bank",
+    "Size": "L|M|XS"
+   },
+   "nested": []
+  },
+  "Card / Art": {
+   "page": "Components",
+   "id": "7:15485",
+   "key": "b28f4ae52ce0f2534ef0fdc6e680408c31e9c2be",
+   "set": true,
+   "section": "04 · Card",
+   "props": {
+    "Design": "Trickster|Caregiver|Analyst|Silver",
+    "Size": "L|M|S|XS"
+   },
+   "nested": []
+  },
+  "Logo / Visa": {
+   "page": "Components",
+   "id": "7:15483",
+   "key": "95085827a487ada06a8bf9bc30af6ab748346244",
+   "set": false,
+   "section": "04 · Card",
+   "props": {},
+   "nested": []
+  },
+  "Chat / Top bar": {
+   "page": "Components",
+   "id": "7:6619",
+   "key": "c3257e6a50ac7d13d5f502ae12bc165aa1a29dd7",
+   "set": false,
+   "section": "05 · Chat",
+   "props": {},
+   "nested": [
+    "Title"
+   ]
+  },
+  "Chat / User message": {
+   "page": "Components",
+   "id": "7:19737",
+   "key": "b526fe5feea04b0509a613ee632386c121f4ac22",
+   "set": false,
+   "section": "05 · Chat",
+   "props": {
+    "Text": "TEXT"
+   },
+   "nested": []
+  },
+  "Chat / Message": {
+   "page": "Components",
+   "id": "7:18356",
+   "key": "b33810e3bf3c00bb28949c9324c04cca83ec8208",
+   "set": false,
+   "section": "05 · Chat",
+   "props": {
+    "Ask": "BOOLEAN",
+    "Body": "BOOLEAN",
+    "Widget": "BOOLEAN",
+    "Info": "BOOLEAN",
+    "Subtext": "BOOLEAN"
+   },
+   "nested": [
+    "Avatar"
+   ]
+  },
+  "MD / Block": {
+   "page": "Components",
+   "id": "7:18215",
+   "key": "e20b3dfc850355eac323c6188b3a66459e6d0b29",
+   "set": true,
+   "section": "05 · Chat",
+   "props": {
+    "Part": "Main text|Body|Widget|Info|Subtext",
+    "Type": "Lead|H2|H3|Paragraph|Bullet list|Numbered list|Checklist|Key-value|Table|Bars|Metric|Callout · Warning|Divider|Link|Footnote|Details"
+   },
+   "nested": []
+  },
+  "Suggest": {
+   "page": "Components",
+   "id": "7:19705",
+   "key": "fd7114cd2cf196fb64f5972f557678c85a620df3",
+   "set": true,
+   "section": "05 · Chat",
+   "props": {
+    "Label": "TEXT",
+    "Dot": "BOOLEAN",
+    "State": "Default|Pressed|Disabled",
+    "Theme": "Dark|Light"
+   },
+   "nested": []
+  },
+  "Chip": {
+   "page": "Components",
+   "id": "7:19724",
+   "key": "437a9f46375ba5af47d1e7a92180d0f1b481f774",
+   "set": true,
+   "section": "05 · Chat",
+   "props": {
+    "Label": "TEXT",
+    "Dot": "BOOLEAN",
+    "Type": "Default|Selected|On card|On card small"
+   },
+   "nested": []
+  },
+  "Action button": {
+   "page": "Components",
+   "id": "7:20486",
+   "key": "5ee1ae5356474e703096b59a1c2649dbf6daa40a",
+   "set": false,
+   "section": "05 · Chat",
+   "props": {},
+   "nested": []
+  },
+  "Spirit / Chat background": {
+   "page": "Components",
+   "id": "31:5058",
+   "key": "511e248cf5380e95ecd6166dca651216b4878076",
+   "set": false,
+   "section": "05 · Chat",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Space": {
+   "page": "Components",
+   "id": "7:3894",
+   "key": "6c7d1377c7ce308c2eeeeaef45ddb7e817f0ce85",
+   "set": true,
+   "section": "06 · Chat · Answer parts",
+   "props": {
+    "Size": "4|8|12|16|20|28"
+   },
+   "nested": []
+  },
+  "_Answer / Lead (legacy)": {
+   "page": "Components",
+   "id": "7:3901",
+   "key": "b060578811e950239e8fdf387944c6049ba8b004",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Number": {
+   "page": "Components",
+   "id": "7:3903",
+   "key": "56df8a57dbe33cfb745118914a9ca8d378cf699a",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Number row item": {
+   "page": "Components",
+   "id": "7:3906",
+   "key": "1df2e13b2c2c289acc89703322ced05f531f4b6d",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Number row": {
+   "page": "Components",
+   "id": "7:3909",
+   "key": "ad86f4b170de1eabcf50aeb48b8e04b6091187b4",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Body": {
+   "page": "Components",
+   "id": "7:3913",
+   "key": "45dccac65001ed8ccf594dcc1b0a93576de5133f",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / H3": {
+   "page": "Components",
+   "id": "7:3915",
+   "key": "e424ef37cf6a74a6155f08fbb8f00cc25da0483f",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Meta": {
+   "page": "Components",
+   "id": "7:3917",
+   "key": "52facbd2c13fcb6f125e4c5a14279e86c8ada0ec",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Group": {
+   "page": "Components",
+   "id": "7:3919",
+   "key": "9a0c63880927727dbb63f48f9fd3cc522b7be4de",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / List item": {
+   "page": "Components",
+   "id": "7:3921",
+   "key": "e2a2c0e8b959cd441b909a1b0be218b64071f5f9",
+   "set": true,
+   "section": "06 · Chat · Answer parts",
+   "props": {
+    "Type": "Bullet|Number"
+   },
+   "nested": []
+  },
+  "Answer / Table row": {
+   "page": "Components",
+   "id": "7:3928",
+   "key": "2051aa65034b2c3c38e46985a07c0833ff4e3231",
+   "set": true,
+   "section": "06 · Chat · Answer parts",
+   "props": {
+    "Type": "Head|Row"
+   },
+   "nested": []
+  },
+  "Answer / Divider": {
+   "page": "Components",
+   "id": "7:3937",
+   "key": "f5000099390173b590075afa7e5d2c2d21383562",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Ask": {
+   "page": "Components",
+   "id": "7:3938",
+   "key": "e00efbf517e2f9964a733887536b1e58c2289f5d",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Check": {
+   "page": "Components",
+   "id": "7:3940",
+   "key": "665d1d75f1f8daa0b3647ef4020be423483e2045",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {
+    "Label": "TEXT",
+    "Amount": "TEXT",
+    "Caption": "TEXT"
+   },
+   "nested": [
+    "From",
+    "Avatar",
+    "To"
+   ]
+  },
+  "Answer / Face ID": {
+   "page": "Components",
+   "id": "7:3951",
+   "key": "6fcc0cef34ad4042212edea9ba40dd4f48017007",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": []
+  },
+  "Answer / Card row": {
+   "page": "Components",
+   "id": "7:3954",
+   "key": "53df71526807180d75058204f07d9acb0a416b05",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {},
+   "nested": [
+    "Art"
+   ]
+  },
+  "Answer / Lead": {
+   "page": "Components",
+   "id": "51:2162",
+   "key": "3e274a487ecebbd638f31115ff14ab3d201b1e11",
+   "set": false,
+   "section": "06 · Chat · Answer parts",
+   "props": {
+    "Answer": "TEXT",
+    "Continuation": "TEXT",
+    "Show continuation": "BOOLEAN"
+   },
+   "nested": []
+  },
+  "Action / round": {
+   "page": "Components",
+   "id": "7:15995",
+   "key": "617a4a4db8ea286bc896d04860cd5d0b4fba534b",
+   "set": true,
+   "section": "07 · Icons · SF Symbols",
+   "props": {
+    "Icon": "TEXT",
+    "Label": "TEXT",
+    "Style": "Default|Accent"
+   },
+   "nested": []
+  },
+  "Top up / From": {
+   "page": "Components",
+   "id": "7:1750",
+   "key": "f6109a46f0e21a4a2e139a1bce4fd50656e8f6c5",
+   "set": true,
+   "section": "03 · Sheets",
+   "props": {
+    "Bank": "Linked|None"
+   },
+   "nested": [
+    "Avatar"
+   ]
+  },
+  "Toggle": {
+   "page": "Components",
+   "id": "47:1494",
+   "key": "db40f4c7919ec101af8e25b0836645d4f870a5ba",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "State": "Off|On",
+    "Disabled": "False|True"
+   },
+   "nested": []
+  },
+  "Selection control": {
+   "page": "Components",
+   "id": "47:1503",
+   "key": "6c7c810ef993b9e1ab8521c7686c53391dfb2ce2",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Type": "Checkbox|Radio",
+    "State": "Off|On|Disabled|Locked"
+   },
+   "nested": []
+  },
+  "Progress": {
+   "page": "Components",
+   "id": "47:1533",
+   "key": "da04e640be56d501f9c1d508dffd03adb0f2569b",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Label": "TEXT",
+    "Value text": "TEXT",
+    "Labels": "BOOLEAN",
+    "Value": "0|25|50|75|100"
+   },
+   "nested": []
+  },
+  "Section header": {
+   "page": "Components",
+   "id": "47:1534",
+   "key": "944e5414b5753c40e8df847ddcfcef609a96cca8",
+   "set": false,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Title": "TEXT",
+    "Aside text": "TEXT",
+    "Aside": "BOOLEAN"
+   },
+   "nested": []
+  },
+  "Badge": {
+   "page": "Components",
+   "id": "47:1547",
+   "key": "e9b5269dc720e1cafdca7503b1d3fded74507abc",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Label": "TEXT",
+    "Type": "Neutral|Info|Warning|Error|Success"
+   },
+   "nested": []
+  },
+  "Divider": {
+   "page": "Components",
+   "id": "47:1552",
+   "key": "7c57590b28a4e260bf69def698ab6d82cfb5209d",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Inset": "False|True"
+   },
+   "nested": []
+  },
+  "Empty state": {
+   "page": "Components",
+   "id": "48:1482",
+   "key": "76e5f64551edb08f233dd2894d78fd4d73daa794",
+   "set": false,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Title": "TEXT",
+    "Text": "TEXT",
+    "Action": "BOOLEAN",
+    "Icon": "SWAP"
+   },
+   "nested": [
+    "Button"
+   ]
+  },
+  "Alert": {
+   "page": "Components",
+   "id": "48:1538",
+   "key": "81cf2b4d216a3444df07a333cc2457b98f4df083",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Title": "TEXT",
+    "Message": "TEXT",
+    "Type": "Default|Destructive"
+   },
+   "nested": [
+    "Action",
+    "Cancel"
+   ]
+  },
+  "Search field": {
+   "page": "Components",
+   "id": "48:1547",
+   "key": "9c0f6283d9a8e95ae1a8c2051313af7f4cefa332",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Text": "TEXT",
+    "State": "Default|Typing"
+   },
+   "nested": []
+  },
+  "Avatar group": {
+   "page": "Components",
+   "id": "48:1589",
+   "key": "472612d0520ae1e35c02a75123691d6a40b63d65",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Count": "2|3|4"
+   },
+   "nested": []
+  },
+  "Page dots": {
+   "page": "Components",
+   "id": "48:1602",
+   "key": "527a0ed6413a2105ea696643c587d72231b40189",
+   "set": true,
+   "section": "08 · Controls & feedback",
+   "props": {
+    "Active": "1|2|3"
+   },
+   "nested": []
+  },
+  "Cell / Skeleton": {
+   "page": "Components",
+   "id": "48:1603",
+   "key": "e1c6246178e62faac3cf7a8e896eabcce968e013",
+   "set": false,
+   "section": "08 · Controls & feedback",
+   "props": {},
+   "nested": []
+  },
+  "Block / Hero amount": {
+   "page": "Components",
+   "id": "57:1518",
+   "key": "6ee6b43e95d0e36bb51c3be9f43716f39b3497f2",
+   "set": false,
+   "section": "09 · Blocks",
+   "props": {
+    "Label": "TEXT",
+    "Amount": "TEXT",
+    "Caption": "TEXT",
+    "Show caption": "BOOLEAN",
+    "Badge": "BOOLEAN"
+   },
+   "nested": [
+    "Badge"
+   ]
+  },
+  "_More button": {
+   "page": "Components",
+   "id": "57:1525",
+   "key": "b759f70b6ab0d24337ec0e506555cb00e279db81",
+   "set": false,
+   "section": "09 · Blocks",
+   "props": {},
+   "nested": []
+  },
+  "Block / Action row": {
+   "page": "Components",
+   "id": "57:1558",
+   "key": "6790deba83ae2f6e003b444fffdd9bdc19b6b30a",
+   "set": true,
+   "section": "09 · Blocks",
+   "props": {
+    "More": "BOOLEAN",
+    "Layout": "Pair|Single"
+   },
+   "nested": [
+    "Action 1",
+    "Action 2"
+   ]
+  },
+  "Block / List group": {
+   "page": "Components",
+   "id": "57:1559",
+   "key": "da98b11ea5eecaa7426be401ba0755afab576802",
+   "set": false,
+   "section": "09 · Blocks",
+   "props": {
+    "Row 3": "BOOLEAN",
+    "Row 4": "BOOLEAN",
+    "Row 5": "BOOLEAN"
+   },
+   "nested": [
+    "Header",
+    "Row 1",
+    "Avatar",
+    "Row 2",
+    "Row 3",
+    "Row 4",
+    "Row 5"
+   ]
+  },
+  "Block / Bottom chat": {
+   "page": "Components",
+   "id": "58:1586",
+   "key": "63c412d3d06cbabd8893bd868f1f9418f18f3f3a",
+   "set": false,
+   "section": "09 · Blocks",
+   "props": {
+    "Suggestion 2": "BOOLEAN",
+    "Suggestion 3": "BOOLEAN",
+    "Suggestions": "BOOLEAN"
+   },
+   "nested": [
+    "Suggestion 1",
+    "Suggestion 2",
+    "Suggestion 3"
+   ]
+  },
+  "Block / Option sheet": {
+   "page": "Components",
+   "id": "58:1612",
+   "key": "2870b5912fa5a37b408655e864d2091106541070",
+   "set": false,
+   "section": "09 · Blocks",
+   "props": {
+    "Option 3": "BOOLEAN",
+    "Option 4": "BOOLEAN"
+   },
+   "nested": [
+    "SheetBar",
+    "Option 1",
+    "Selection",
+    "Option 2",
+    "Option 3",
+    "Option 4",
+    "Action"
+   ]
+  },
+  "Toggle row": {
+   "page": "_internal",
+   "id": "11:46858",
+   "key": "644cddfc3f1ee26ca78bb0443f2a7d7b085a5db0",
+   "set": false,
+   "props": {},
+   "nested": []
+  },
+  "Card / re:verse": {
+   "page": "_internal",
+   "id": "11:47219",
+   "key": "7a7323d1dc132234c71dd77974d0146887d0ea05",
+   "set": true,
+   "props": {
+    "Size": "L|M"
+   },
+   "nested": []
+  },
+  "Notif row": {
+   "page": "_internal",
+   "id": "11:47220",
+   "key": "aa92fedd3fdcc0c001cd855bfa0cb3073f5b05c6",
+   "set": true,
+   "props": {
+    "Type": "Actions|Default"
+   },
+   "nested": [
+    "Avatar"
+   ]
+  },
+  "_Suggest (legacy)": {
+   "page": "_internal",
+   "id": "7:1132",
+   "key": "994bb1f99358a8bb15739b7499df2b9d7a5f68dc",
+   "set": true,
+   "props": {
+    "Suggest": "TEXT",
+    "State": "Default"
+   },
+   "nested": []
+  }
+ },
+ "icons": {
+  "Icon / chevron-left": "7:1336",
+  "Icon / chevron-down": "7:1338",
+  "Icon / chevron-right": "7:1340",
+  "Icon / chevron-up": "7:1342",
+  "Icon / arrow-right": "7:1344",
+  "Icon / arrow-up": "7:1346",
+  "Icon / arrow-45": "7:1348",
+  "Icon / x": "7:1350",
+  "Icon / dots": "7:1352",
+  "Icon / face id": "7:1354",
+  "Icon / arrow-235": "7:1356",
+  "Icon / arrow-left": "7:1358",
+  "Icon / arrow-down": "7:1360",
+  "Icon / checkmark": "7:1362",
+  "Icon / plus": "7:1364",
+  "Icon / basket": "7:1366",
+  "Icon / house": "7:1368",
+  "Icon / food": "7:1370",
+  "Icon / car": "7:1372",
+  "Icon / attach": "7:1374",
+  "Icon / flashlight": "7:1376",
+  "Icon / stack": "7:1378",
+  "Icon / question mark": "7:1380",
+  "Icon / delete": "7:1382",
+  "Icon / edit": "7:1384",
+  "Icon / refresh": "7:1386",
+  "Icon / shield": "7:1388",
+  "Icon / preferences": "7:1390",
+  "Icon / appearance": "7:1392",
+  "Icon / book": "7:1394",
+  "Icon / copy": "7:1396",
+  "Icon / euro": "7:1398",
+  "Icon / dollar": "7:1400",
+  "Icon / person": "7:1402",
+  "Icon / bells": "7:1404",
+  "Icon / wallet": "7:1406",
+  "Icon / qr": "7:1408",
+  "Icon / send": "7:1410",
+  "Icon / voice": "7:1412",
+  "SF / creditcard": "7:15983",
+  "SF / building.columns": "7:15985",
+  "SF / bitcoinsign.circle": "7:15987",
+  "SF / plus": "7:15989",
+  "SF / arrow.up.arrow.down.square": "7:15991",
+  "SF / qrcode": "7:15993",
+  "SF / doc.text": "7:16004",
+  "SF / arrow.down.circle": "7:16006",
+  "SF / link": "7:16008",
+  "SF / arrow.down.left.circle": "7:16010",
+  "SF / divide.circle": "7:16012",
+  "SF / person.3": "7:16014",
+  "SF / gift": "7:16016",
+  "SF / calendar": "7:16018",
+  "SF / calendar.badge.minus": "7:16020",
+  "SF / bolt": "7:16022",
+  "SF / figure.run": "7:16024",
+  "SF / pause.circle": "7:16026",
+  "SF / exclamationmark.triangle": "7:16028",
+  "SF / target": "7:16030",
+  "SF / eurosign.circle": "7:16032",
+  "SF / scissors": "7:16034",
+  "SF / arrow.left.arrow.right": "7:16036",
+  "SF / chart.line.uptrend": "7:16038",
+  "SF / clock": "7:16040",
+  "SF / sparkles": "7:16042",
+  "SF / building.columns.fill": "7:16044",
+  "SF / bitcoinsign.circle.fill": "7:16046",
+  "SF / doc.text.fill": "7:16048",
+  "SF / person.3.fill": "7:16050",
+  "SF / arrow.down.left.circle.fill": "7:16052",
+  "SF / fork.knife": "7:16054",
+  "SF / cart.fill": "7:16056",
+  "SF / bag.fill": "7:16058",
+  "SF / cup.and.saucer.fill": "7:16060",
+  "SF / car.fill": "7:16062",
+  "SF / theatermasks.fill": "7:16064",
+  "SF / repeat": "7:16066",
+  "SF / cross.case.fill": "7:16068",
+  "SF / airplane": "7:16070",
+  "SF / house.fill": "7:16072",
+  "SF / ellipsis": "7:16074",
+  "SF / umbrella.fill": "7:16076",
+  "SF / suitcase.fill": "7:16078",
+  "SF / creditcard.fill": "7:16080",
+  "SF / gearshape.fill": "7:16082",
+  "SF / square.grid.2x2": "7:16084",
+  "SF / lock": "64:3166",
+  "SF / bell": "64:3168",
+  "SF / questionmark.circle": "64:3170",
+  "SF / sun.max": "64:3172",
+  "SF / envelope": "78:1685",
+  "SF / phone": "78:1687",
+  "SF / globe": "78:1689",
+  "SF / snowflake": "78:1691",
+  "SF / slider.horizontal.3": "78:1693",
+  "SF / arrow.triangle.2.circlepath": "78:1695",
+  "SF / shippingbox": "78:1697",
+  "SF / xmark.circle": "78:1699",
+  "SF / rectangle.portrait.and.arrow.right": "78:1701",
+  "SF / arrow.up": "78:1703",
+  "SF / arrow.down.left": "78:1705",
+  "SF / house": "78:1707",
+  "SF / faceid": "11:52447",
+  "SF / person.text.rectangle": "11:52452",
+  "SF / doc.text.viewfinder": "11:52457",
+  "SF / building.2.fill": "11:52462",
+  "SF / chart.pie.fill": "11:52467",
+  "SF / checkmark.circle.fill": "11:52472",
+  "SF / safari.fill": "11:52477",
+  "SF / yensign.circle.fill": "11:52482",
+  "SF / gift.fill": "11:52487",
+  "SF / bell.fill": "11:52492",
+  "SF / eurosign.circle.fill": "11:52497",
+  "SF / shippingbox.fill": "11:52502",
+  "SF / xmark.circle.fill": "11:52507",
+  "SF / mappin.circle.fill": "11:52512",
+  "SF / iphone": "11:52517",
+  "SF / arrow.down.circle.fill": "11:52522",
+  "SF / eye.slash.fill": "11:52527"
+ },
+ "variables": {
+  "Primitives / Color": {
+   "modes": [
+    "Value"
+   ],
+   "count": 55
+  },
+  "Primitives / Type": {
+   "modes": [
+    "Value"
+   ],
+   "count": 22
+  },
+  "Type": {
+   "modes": [
+    "Value"
+   ],
+   "count": 15
+  },
+  "Platform": {
+   "modes": [
+    "iOS",
+    "Android"
+   ],
+   "count": 3
+  },
+  "Size": {
+   "modes": [
+    "Value"
+   ],
+   "count": 22
+  },
+  "Spirit persona": {
+   "modes": [
+    "neutral",
+    "analyst",
+    "trickster",
+    "caregiver"
+   ],
+   "count": 18
+  },
+  "Color": {
+   "modes": [
+    "light",
+    "dark"
+   ],
+   "count": 62
+  },
+  "Theme": {
+   "modes": [
+    "re:verse",
+    "Atlas"
+   ],
+   "count": 10
+  }
+ },
+ "variableNames": [
+  "space/2",
+  "space/4",
+  "space/8",
+  "space/12",
+  "space/16",
+  "space/20",
+  "space/24",
+  "space/28",
+  "space/32",
+  "space/40",
+  "space/48",
+  "space/64",
+  "space/80",
+  "space/screen margin",
+  "radius/xs",
+  "radius/s",
+  "radius/m",
+  "radius/l",
+  "radius/xl",
+  "radius/sheet",
+  "radius/board",
+  "radius/full",
+  "background/primary",
+  "background/secondary",
+  "background/elevated",
+  "background/overlay",
+  "background/primary inversed",
+  "background/fade",
+  "fill/default",
+  "fill/sheet",
+  "fill/glass",
+  "fill/glass cell",
+  "fill/glass light",
+  "fill/glass dark",
+  "fill/accent",
+  "text/primary",
+  "text/secondary",
+  "text/tertiary",
+  "text/primary inversed",
+  "text/error",
+  "text/positive",
+  "text/accent",
+  "text/on dark/primary",
+  "text/on dark/secondary",
+  "icon/primary",
+  "icon/secondary",
+  "icon/tertiary",
+  "icon/primary inversed",
+  "border/primary",
+  "border/subtle",
+  "border/error",
+  "border/glass",
+  "color/action",
+  "color/action on dark",
+  "color/accent",
+  "color/accent subtle",
+  "radius/control",
+  "radius/field",
+  "radius/card",
+  "font/text",
+  "font/mono",
+  "glow/1",
+  "glow/2",
+  "glow/3",
+  "glow/4",
+  "glow/5",
+  "voice/style",
+  "voice/greeting",
+  "voice/confirm",
+  "voice/done",
+  "voice/reassure",
+  "voice/over budget"
+ ],
+ "textStyles": [
+  "Caption/Regular",
+  "Control/Button/Regular",
+  "Control/Button/Small",
+  "AOSP/Body/Medium",
+  "Caption/Small",
+  "Title/Title 1",
+  "Body/Regular",
+  "Control/Input/Regular",
+  "Control/Input/Label",
+  "Title/Title 2",
+  "Chat/Lead",
+  "Chat/Label",
+  "Chat/Metric",
+  "Chat/Body",
+  "Chat/H3",
+  "Chat/Body strong",
+  "Chat/Small",
+  "Title/Title 3",
+  "Body/Medium",
+  "Title/Display 3",
+  "Title/Title 4",
+  "Control/Chip",
+  "Body/Small",
+  "Title/Display 2",
+  "Caption/Small sentence",
+  "Chat/H2",
+  "Chat/Numeric",
+  "Title/Display 1",
+  "Section/Title",
+  "Section/Aside",
+  "Label/Hero"
+ ]
 }

@@ -2,6 +2,9 @@
 
 For agents writing `use_figma` code by hand (anything the renderer doesn't cover). Load the Figma `figma-use` skill first; this file adds what we learned on re:verse.
 
+## The installed renderer
+The renderer lives in the file: `figma.root.getSharedPluginData('reverse_ds', 'renderer')`, version in `'renderer_hash'`. A call runs it with `new AsyncFunction('SPECS', 'OPTS', src)`. `scripts/build-call.mjs` writes the call, the full install and (with `--patch-from`) a line-hunk patch; local copies of each version are kept in `.out/renderer-<hash>.txt`. Never edit the installed text by hand: change `scripts/figma/render.js`, rebuild, patch.
+
 ## Session, limits, batching
 - `create_session` once with the file key; pass the same `sessionId` on every call.
 - A View/Collab seat gets a few MCP calls a month; work from a Full or Dev seat. Several Figma servers connected → `whoami` on each, use the one that can edit.

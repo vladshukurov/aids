@@ -30,7 +30,7 @@ async function loadLibrary() {
 }
 async function comp(name) {
   if (name in CACHE) return CACHE[name];
-  const ref = LIB.components[name];
+  const ref = typeof LIB.components[name] === 'string' ? { id: LIB.components[name] } : LIB.components[name];
   let c = ref && ref.id ? await byId(ref.id) : null;
   if (!c && ref && ref.key) {
     try { c = ref.set ? await figma.importComponentSetByKeyAsync(ref.key) : await figma.importComponentByKeyAsync(ref.key); } catch (e) {}
@@ -69,7 +69,7 @@ function set(i, props, label) {
     const k = pkey(i, p);
     if (!k) { if (!opt) warn((label || i.name) + ': no property "' + p + '"'); continue; }
     const t = i.componentProperties[k].type;
-    out[k] = t === 'BOOLEAN' ? !!v : (t === 'TEXT' || t === 'VARIANT') && typeof v !== 'object' ? String(v) : v;
+    out[k] = t === 'BOOLEAN' ? !!v : t === 'TEXT' && typeof v !== 'object' ? glue(String(v)) : t === 'VARIANT' ? String(v) : v;
   }
   if (!Object.keys(out).length) return;
   try { i.setProperties(out); } catch (e) {
@@ -95,7 +95,19 @@ async function setText(i, layer, value, nth) {
   const all = i.findAllWithCriteria({ types: ['TEXT'] });
   const t = layer ? all.find(n => n.name === layer) : all[nth || 0];
   if (!t) { warn(i.name + ': no text layer "' + (layer || '#' + (nth || 0)) + '"'); return null; }
-  await fonts(t); t.characters = String(value); return t;
+  await fonts(t); t.characters = glue(String(value)); return t;
+}
+
+// Line-break hygiene (foundations/quality.md §3): no function word at a line end, no one-word last line,
+// card numbers and dates never split. Applied to every text the renderer writes.
+const NB = '\u00A0';
+function glue(s) {
+  if (typeof s !== 'string' || s.length < 12) return s;
+  s = s.replace(/•••• (\d{4})/g, '••••' + NB + '$1').replace(/(\d) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, '$1' + NB + '$2');
+  s = s.replace(/(^|\s)(a|an|to|of|in|at|the|on|by|for|with) (?=\S)/gi, (m, sp, w) => sp + w + NB);
+  const i = s.lastIndexOf(' ');
+  if (i > 0 && s.length - i <= 8) s = s.slice(0, i) + NB + s.slice(i + 1);
+  return s;
 }
 
 // ---------- tokens ----------
@@ -128,13 +140,13 @@ function add(parent, child, fill) {
 }
 function spacer(px, name) {
   const s = figma.createFrame(); s.name = name || 'space ' + px; s.fills = []; s.resize(1, px);
-  const v = VARS['space/' + px]; if (v) s.setBoundVariable('height', v); else warn('no variable space/' + px);
+  const v = VARS['space/' + px]; if (v) s.setBoundVariable('height', v); else if (!name) warn('no variable space/' + px);
   return s;
 }
 async function txt(s, style, color, ranges) {
   const t = figma.createText(); const st = TS[style];
   if (st) { await loadFont(st.fontName); await t.setTextStyleIdAsync(st.id); } else { warn('no text style ' + style); await loadFont(t.fontName); }
-  t.characters = String(s); t.fills = [paint(color || 'text/primary')];
+  t.characters = glue(String(s)); t.fills = [paint(color || 'text/primary')];
   for (const [a, b, c] of ranges || []) t.setRangeFills(a, b, [paint(c)]);
   return t;
 }
@@ -154,7 +166,7 @@ async function avatar(av, a) {
       const src = await byId(OPTS.photos[a.person]);
       const dst = av.findOne(n => 'fills' in n && Array.isArray(n.fills) && n.fills.some(f => f.type === 'IMAGE'));
       if (src && dst && 'fills' in src) dst.fills = src.fills; else warn('photo of ' + a.person + ' not applied');
-    } else if (photo) warn('no photo registered for ' + a.person + ' (state/figma.json → photos)');
+    }
     if (!photo) await setText(av, null, initials(a.person));
   } else if (a.currency) set(av, { Type: 'Currency', Style: a.currency, 'Sublogo?': a.sublogo !== false }, 'Avatar');
   else if (a.merchant) set(av, { Type: 'Transaction', Style: a.merchant, 'Sublogo?': false }, 'Avatar');
@@ -225,14 +237,14 @@ async function heroAmount(b) {
 async function heroCard(b) {
   const w = box('HORIZONTAL', 'Hero card'); w.primaryAxisAlignItems = 'CENTER';
   const c = await make('Card', { Size: b.size || 'L', Layout: b.layout || 'E', Network: b.network || 'Visa', 'Frozen?': !!b.frozen, 'Virtual?': !!b.virtual, 'Show details?': false, 'Last 4': b.last4, 'Short number?': '•••• ' + b.last4 });
-  if (c && b.design) set(sub(c, 'Card / Art'), { Design: b.design }, 'Card / Art');
+  if (c && b.design) set(sub(c, 'Art'), { Design: b.design }, 'Card art');
   add(w, c, false);
   return w;
 }
 async function heroPerson(b) {
   const h = box('VERTICAL', 'Hero person', 16);
   const av = await make('Avatar'); await avatar(av, b.avatar || { person: b.name });
-  if (av) { av.rescale((b.size || 96) / av.width); add(h, av, false); }
+  if (av) { set(av, { 'Sublogo?': false }); av.rescale((b.size || 96) / av.width); add(h, av, false); }
   const t = box('VERTICAL', 'Name', 8); add(h, t);
   wrapText(add(t, await txt(b.name, 'Title/Display 3', 'text/primary')));
   if (b.caption) wrapText(add(t, await txt(b.caption, 'Label/Hero', 'text/secondary')));
@@ -313,9 +325,10 @@ async function block(b, sp) {
   }
   if (b.fields) { const w = box('VERTICAL', 'Fields', 16); for (const f of b.fields) add(w, await make('Text Field', { Label: f.label, Placeholder: f.placeholder || '', 'Caption?': f.caption || '', 'Description?': !!f.caption, State: f.state || 'Default' })); return w; }
   if (b.fromTo) {
-    const w = box('VERTICAL', 'From → to', 8); w.counterAxisAlignItems = 'CENTER';
+    const w = box('VERTICAL', 'From → to', 8);
     const a = add(w, await make('Cell')); await row(a, Object.assign({ kind: 'state' }, b.fromTo.from), sp);
-    const ic = await iconNode('Icon / arrow-down'); if (ic) add(w, ic.createInstance(), false);
+    const ic = await iconNode('Icon / arrow-down');
+    if (ic) { const ar = box('HORIZONTAL', 'Arrow'); num(ar, 'paddingLeft', 12); add(w, ar); add(ar, ic.createInstance(), false); }
     const c = add(w, await make('Cell')); await row(c, Object.assign({ kind: 'state' }, b.fromTo.to), sp);
     return w;
   }
@@ -525,9 +538,9 @@ async function main() {
     let f;
     try { f = sp.archetype === 'chat' ? await chatScreen(sp) : await baseScreen(sp); }
     catch (e) { warn(sp.id + ': build failed — ' + String(e.message).slice(0, 120)); continue; }
-    const old = OPTS.replace ? existing.find(n => n.name === f.name) : null;
+    const old = OPTS.replace ? existing.find(n => !n.removed && n.name === f.name) : null;
     sec.appendChild(f);
-    if (old) { f.x = old.x; f.y = old.y; const oc = sec.children.find(n => n.type === 'TEXT' && n.name === 'caption · ' + old.name); old.remove(); if (oc) oc.remove(); }
+    if (old) { f.x = old.x; f.y = old.y; const oc = sec.children.find(n => n.type === 'TEXT' && n.name === 'caption · ' + old.name); old.remove(); if (oc) oc.remove(); existing.splice(existing.indexOf(old), 1); }
     else { f.x = 120 + col * 522; f.y = 200; col++; }
     const cap = await txt(sp.caption || sp.name || sp.id, 'Body/Regular', 'text/secondary'); cap.name = 'caption · ' + f.name;
     sec.appendChild(cap); cap.resize(402, cap.height); cap.textAutoResize = 'HEIGHT'; cap.x = f.x; cap.y = f.y - cap.height - 24;

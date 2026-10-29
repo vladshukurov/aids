@@ -6,6 +6,8 @@ A screen is described as JSON and rendered by `scripts/figma/render.js`. You wri
 node scripts/lint-spec.mjs my-screen.json                  # rules check, no Figma needed
 node scripts/build-call.mjs my-screen.json --section "Polygon · Profile"
 # → .out/call.js: pass its whole content as `code` to one use_figma call
+#   answer { needsInstall } → run .out/install.js once (or add --patch-from <hash> and run .out/patch.js), then the call again
+#   --replace re-renders frames with the same name in place; --theme Atlas; --no-shots
 ```
 
 A file holds one screen, an array of screens, or `{ "flow": "Freeze card", "screens": [ … ] }`. Screens of one flow go into one call so links between them become prototype connections.

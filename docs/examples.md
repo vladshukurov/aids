@@ -15,4 +15,8 @@
 | Чат · цифры | `specs/examples/chat-food-october.json` | Lead + ряд чисел + смысл одной фразой + источник; характер analyst |
 | Чат · перевод в цель | `specs/examples/chat-spain-topup.json` | Check перед переводом и ровно три чипа; тот же ответ в характере caregiver; ответ после действия с Undo |
 
-Скриншоты добавляются после прогона `run-evals` (секция `Polygon · evals` в Figma).
+![Эталонные экраны](img/golden-screens-small.png)
+
+Каждый экран отдельно лежит в [img/screens/](img/screens/). В Figma они находятся на странице Polygon, в секциях `Polygon · golden · …`, а id фреймов записаны в `evals/references.md`.
+
+Все 14 экранов собраны рендерером без ручных правок. Аудит: 0 ошибок. Флоу заморозки карты и перевода связаны прототипными переходами, их можно прокликать в Figma.

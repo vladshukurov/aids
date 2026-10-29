@@ -20,19 +20,36 @@ if (generated) {
   for (const [n, c] of Object.entries(comps)) for (const [p, t] of Object.entries(c.props || {})) (propsAll[p] = propsAll[p] || []).push([n, t]);
   for (const f of readdirSync(join(ROOT, 'components')).filter(f => f.endsWith('.md') && !f.startsWith('_'))) {
     const md = readFileSync(join(ROOT, 'components', f), 'utf8');
-    for (const m of md.matchAll(/`([A-Z][\w ]*?)=([^`]+?)`/g)) {
-      const [, p, v] = m; const owners = propsAll[p];
-      if (!owners) { problems.push(`${f}: \`${p}=${v}\` — no component has a property "${p}"`); continue; }
-      const variantOwners = owners.filter(([, t]) => !['TEXT', 'BOOLEAN', 'SWAP'].includes(t));
-      if (variantOwners.length && !variantOwners.some(([, t]) => t.split('|').includes(v.trim()))) problems.push(`${f}: \`${p}=${v}\` — value not in ${variantOwners.map(([n, t]) => `${n} (${t})`).join(', ')}`);
+    const spans = md.split('`').filter((_, i) => i % 2 === 1).filter(x => /^[A-Z][^=\n]*=[^\n]+$/.test(x) && x.length < 120);
+    for (const span of spans) { const m = [null, span];
+      // `Type=Primary, Size=l` (pairs) or `Style=Euro, Dollar` (one property, several values)
+      let prop = null;
+      for (const part of m[1].split(/,\s*/)) {
+        let p, vals;
+        if (part.includes('=')) { [p, vals] = part.split('='); p = p.trim(); prop = p; } else { p = prop; vals = part; }
+        if (!p) continue;
+        const words = p.split(' ');
+        const name = words.map((_, i) => words.slice(i).join(' ')).find(n => propsAll[n]);
+        if (!name) { problems.push(`${f}: \`${m[1]}\` — no component has a property "${p}"`); break; }
+        prop = name;
+        for (const v of vals.split(/\s*\|\s*/).map(x => x.trim()).filter(x => x && x !== '…')) {
+          const owners = propsAll[name].filter(([, t]) => !['TEXT', 'BOOLEAN', 'SWAP'].includes(t));
+          if (owners.length && !owners.some(([, t]) => t.split('|').includes(v))) problems.push(`${f}: \`${name}=${v}\` — not a value of ${owners.map(([n]) => n).join(', ')}`);
+        }
+      }
     }
     const head = md.match(/^Figma: `([^`]+)`/m);
     const owner = head && comps[head[1]];
     if (owner) {
       const sec = md.split(/^## Properties/m)[1];
-      if (sec) for (const line of sec.split('\n## ')[0].split('\n').filter(l => /^\| [^-]/.test(l)).slice(1)) {
-        const name = line.split('|')[1].trim().replace(/^→\s*/, '');
-        if (name && !owner.props[name]) problems.push(`${f}: property "${name}" is not on ${head[1]} in Figma`);
+      // first table of the section only; "A / B" rows name two properties
+      const lines = sec ? sec.split('\n## ')[0].split('\n') : [];
+      const start = lines.findIndex(l => /^\|/.test(l));
+      const table = [];
+      for (let i = start; start >= 0 && i < lines.length && /^\|/.test(lines[i]); i++) table.push(lines[i]);
+      for (const line of table.slice(2)) for (const raw of line.split('|')[1].split(' / ')) {
+        const name = raw.trim().replace(/^→\s*/, '').replace(/[`*]/g, '');
+        if (name && !owner.props[name] && !owner.props['→ ' + name]) problems.push(`${f}: property "${name}" is not on ${head[1]} in Figma`);
       }
     }
   }

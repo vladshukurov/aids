@@ -29,7 +29,7 @@
           "rows": [
             {
               "title": "Card is frozen",
-              "caption": "Payments and withdrawals are declined",
+              "caption": "Payments and ATM are declined",
               "chevron": false,
               "avatar": {
                 "icon": "snowflake"
@@ -127,7 +127,7 @@
           "rows": [
             {
               "title": "Card is frozen",
-              "caption": "Payments and withdrawals are declined",
+              "caption": "Payments and ATM are declined",
               "chevron": false,
               "avatar": {
                 "icon": "snowflake"
@@ -298,7 +298,7 @@
             },
             {
               "title": "Virtual card •••• 1255",
-              "caption": "Keeps working online · Main account",
+              "caption": "Keeps working online",
               "avatar": {
                 "icon": "creditcard"
               }

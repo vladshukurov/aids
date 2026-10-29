@@ -6,17 +6,17 @@
   "topbar": { "title": "NOTIFICATIONS", "back": true },
   "body": [
     { "group": "Payments", "rows": [
-      { "title": "Money in", "caption": "Salary, transfers and refunds", "toggle": true, "avatar": { "icon": "arrow.down.left" } },
+      { "title": "Money in", "caption": "Salary, transfers, refunds", "toggle": true, "avatar": { "icon": "arrow.down.left" } },
       { "title": "Card payments", "caption": "•••• 0020 and •••• 1255", "toggle": true, "avatar": { "icon": "creditcard" } },
       { "title": "Declined payments", "caption": "With the reason, right away", "toggle": true, "avatar": { "icon": "xmark.circle" } }
     ] },
     { "group": "Budget and goals", "rows": [
-      { "title": "Budget pace", "caption": "When a month heads over budget", "toggle": true, "avatar": { "icon": "chart.line.uptrend.xyaxis" } },
-      { "title": "Spain trip", "caption": "A day before €150 goes in on the 1st", "toggle": true, "avatar": { "goal": true } }
+      { "title": "Budget pace", "caption": "When a budget runs ahead", "toggle": true, "avatar": { "icon": "chart.line.uptrend" } },
+      { "title": "Spain trip", "caption": "A day before €150 goes in", "toggle": true, "avatar": { "goal": true } }
     ] },
     { "group": "Email", "rows": [
-      { "title": "Monthly statement", "caption": "To alex.morgan@mail.de on the 1st", "toggle": true, "avatar": { "icon": "doc.text" } },
-      { "title": "News from re:verse", "caption": "New features, about once a month", "toggle": false, "avatar": { "icon": "sparkles" } }
+      { "title": "Monthly statement", "caption": "By email on the 1st", "toggle": true, "avatar": { "icon": "doc.text" } },
+      { "title": "News from re:verse", "caption": "New features, once a month", "toggle": false, "avatar": { "icon": "sparkles" } }
     ] }
   ],
   "links": [{ "from": "back", "to": "back" }]
