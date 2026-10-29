@@ -1,0 +1,46 @@
+// Audit one screen frame in the re:verse DS file. Paste into use_figma, set FRAME_ID.
+// Returns errors (must fix) and warnings (check by eye).
+const FRAME_ID = 'REPLACE_ME';
+const f = await figma.getNodeByIdAsync(FRAME_ID);
+let page = f; while (page.type !== 'PAGE') page = page.parent;
+await figma.setCurrentPageAsync(page);
+
+const errors = [], warnings = [];
+const insideInstance = n => { let q = n.parent; while (q && q !== f) { if (q.type === 'INSTANCE') return true; q = q.parent; } return false; };
+const all = f.findAll(() => true);
+let instances = 0, own = 0;
+
+for (const n of all) {
+  if (n.type === 'INSTANCE' && !insideInstance(n)) instances++;
+  if (insideInstance(n)) continue;
+  if (n.type !== 'INSTANCE') own++;
+  // raw colors on own nodes
+  if ('fills' in n && Array.isArray(n.fills)) for (const p of n.fills)
+    if (p.type === 'SOLID' && p.visible !== false && !(p.boundVariables && p.boundVariables.color))
+      errors.push(`raw fill on ${n.type} "${n.name}" (${n.id})`);
+  // text without a style
+  if (n.type === 'TEXT' && !n.textStyleId) errors.push(`text without style "${n.characters.slice(0, 24)}" (${n.id})`);
+  // absolute frames with several children
+  if (n.type === 'FRAME' && n !== f && n.layoutMode === 'NONE' && n.children.length > 1)
+    warnings.push(`frame without auto layout "${n.name}" (${n.id})`);
+  // spacing not bound
+  if ((n.type === 'FRAME') && n.layoutMode !== 'NONE' && n.itemSpacing > 0 && !(n.boundVariables && n.boundVariables.itemSpacing))
+    warnings.push(`gap ${n.itemSpacing} not bound "${n.name}" (${n.id})`);
+}
+// placeholders and brand rules anywhere in the frame
+for (const t of f.findAllWithCriteria({ types: ['TEXT'] })) {
+  const s = t.characters;
+  if (/^(Button|Label|Placeholder|Text|Title|Suggestion)$/.test(s) || /Name[’']s |Lorem/.test(s)) errors.push(`placeholder text "${s}" (${t.id})`);
+  if (/Re:verse|RE:VERSE|Re:Verse/.test(s)) errors.push(`brand must be lowercase: "${s.slice(0, 30)}" (${t.id})`);
+  if (/\bSpirit\b/.test(s)) warnings.push(`"Spirit" in text — allowed only inside the chat: "${s.slice(0, 30)}" (${t.id})`);
+}
+// one Primary on light screens
+const primaries = f.findAll(n => n.type === 'INSTANCE' && n.componentProperties && Object.entries(n.componentProperties).some(([k, v]) => k === 'Type' && v.value === 'Primary') && !insideInstance(n));
+if (primaries.length > 1) errors.push(`${primaries.length} Primary buttons; max one`);
+// status bar and home indicator
+const names = await Promise.all(f.findAllWithCriteria({ types: ['INSTANCE'] }).map(async i => { const m = await i.getMainComponentAsync(); return m ? (m.parent && m.parent.type === 'COMPONENT_SET' ? m.parent.name : m.name) : ''; }));
+if (!names.includes('StatusBar')) errors.push('no StatusBar');
+if (!names.some(n => /HomeIndicator|Home Indicator/.test(n))) warnings.push('no HomeIndicator');
+if (Math.round(f.width) !== 402) warnings.push(`width ${f.width}, expected 402`);
+
+return { instances, ownNodes: own, instanceShare: +(instances / Math.max(1, instances + own)).toFixed(2), errors: errors.slice(0, 30), warnings: warnings.slice(0, 20) };
