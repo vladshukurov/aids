@@ -10,7 +10,13 @@ Figma: `Avatar`, `Sublogo` · search: "avatar", "merchant icon", "currency icon"
 | Type | Transaction | Merchants and categories: `Style=Food, Market, Home, Car, Netflix, Revolut, Coinbase, CashApp, Bells, Send, Plus, Re:verse` |
 | Sublogo | boolean | Bank badge in the corner. IMPORTANT: default is on — turn it off for merchants and people not on re:verse |
 
-Goals: `Style=Goal, Type=Transaction` (target icon). Style values exist only with their Type: set both together, e.g. `{Style:'Euro', Type:'Currency'}`.
+Goals: `Style=Goal, Type=Transaction` (target icon). Style values exist only with their Type — set both together:
+| Type | Styles |
+|---|---|
+| Avatar | Default, Image, Re:verse |
+| Currency | Euro, Dollar, Pound, USDT, USDC |
+| Transaction | Goal, Send, Plus, Market, Food, Home, Car, Bells, Netflix, Revolut, Coinbase, CashApp |
+If a combination fails with "Unable to find a variant", read the variant names of the Avatar set instead of guessing.
 
 All Style values: Goal, Default, Image, Re:verse, Euro, Dollar, USDT, USDC, Pound, Send, Plus, Market, Food, Home, Car, Revolut, Bells, Netflix, Coinbase, CashApp.
 

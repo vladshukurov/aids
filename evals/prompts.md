@@ -18,5 +18,5 @@ Typical client requests. Run each through `build-screen` (or `build-flow` for F*
 13. Empty state: no linked banks in "Top up from".
 
 ## Flows (build-flow)
-- F1. Split a dinner bill of €84 with two friends.
-- F2. Freeze a lost card and order a new one.
+- F1. Split a dinner bill of €84 with two friends. → `scenarios/split-bill.md` (built 29.10)
+- F2. Freeze a lost card and order a new one. → `scenarios/freeze-card.md` (built 29.10)
