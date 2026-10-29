@@ -12,7 +12,6 @@
     "Archive · Spirit chat": "7:2821"
   },
   "sections": {
-    "Cover / Cover frame": "33:753",
     "Foundations / 01 · Theme": "33:156",
     "Foundations / 02 · Color": "33:157",
     "Foundations / 03 · Typography": "33:603",
@@ -32,7 +31,8 @@
     "Foundations / 05 · Mode matrix": "42:20772",
     "Examples / 03 · Spirit personas": "46:2134",
     "Examples / 04 · Persona reference (from Vlad)": "39:30192",
-    "Polygon / Split bill self-run": "51:292"
+    "Polygon / Split bill self-run": "51:292",
+    "Cover / Cover_1920x1120 (by Vlad)": "39:31962"
   },
   "collections": {
     "Primitives / Color": "VariableCollectionId:10:987",
