@@ -8,6 +8,7 @@
 - [Figma ledger](state/figma-ledger.json): page, collection, component and example ids
 
 ## Foundations
+- [Layout grammar](foundations/layout.md): how a screen is composed — think first, archetypes, zones and spacing, composition checks
 - [Tokens](foundations/tokens.md): collections, which token for which role, spacing, radius
 - [Theming](foundations/theming.md): brand themes (re:verse, Atlas), light/dark
 - [Typography](foundations/typography.md): text styles and when to use them
@@ -15,6 +16,7 @@
 
 ## Components
 - [Catalog](components/overview.md): every component, its synonyms and the file to read
+- [Blocks](components/blocks.md): Hero amount, Action row, List group, Bottom chat, Option sheet — build screens from these first
 - [Controls & feedback](components/controls.md): toggle, checkbox/radio, progress, badge, alert, empty state, search, avatar group…
 
 ## Recipes
@@ -28,3 +30,4 @@
 ## Optional
 - [Evals](evals/rubric.md): how a screen is scored; [prompts](evals/prompts.md) to test with
 - [Research](research/ai-ready-ds-research.md): how AI-ready design systems work (Russian)
+- [Research · screen quality](research/screen-quality-research.md): how to get good-looking screens from agents (Russian)
