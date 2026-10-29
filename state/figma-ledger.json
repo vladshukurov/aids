@@ -108,7 +108,10 @@
   },
   "notes": [
     "Never hardcode style or variable ids; resolve by name (style ids end with a comma).",
-    "search_design_system returns nothing until the library is published; use the lookup script in build-screen SKILL.md."
+    "search_design_system works (published 29.10) and returns descriptions, scopes and keys. In this file resolve results locally by name; in another file (a client polygon) import by key: importComponentSetByKeyAsync / importComponentByKeyAsync / importVariableByKeyAsync / importStyleByKeyAsync.",
+    "After changing descriptions or components, the library must be republished by a person (Assets → Publish) before search shows the change."
   ],
-  "libraryPublished": false
+  "libraryPublished": true,
+  "libraryName": "AI ready DS",
+  "libraryKey": "lk-70def00ccf53c6c8f0ebad8d5709219623a0828f3c9556fac747f9d6d85589aca9dc5aea8c5267a162ee7da99d348a1f289134ef6fd8ece917d82aaf0abf40aa"
 }

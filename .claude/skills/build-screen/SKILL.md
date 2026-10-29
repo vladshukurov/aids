@@ -17,7 +17,10 @@ description: Build one mobile banking screen in the re:verse DS Figma file from 
 - Take every number and name from `foundations/persona.md`; check before → after math.
 
 ## 2. Find components, variables, styles
-If `state/figma-ledger.json` says `"libraryPublished": true`, use `search_design_system` (one intent per query). Otherwise skip it — it returns nothing for an unpublished library — and look things up by name in the file. One read call that gives you everything:
+The library is published (`libraryPublished` in the ledger), so start with **one batched** `search_design_system` call: one query per thing the recipe needs ("list row", "bottom sheet header", "Confirm_example", "text secondary", "Section title"). Results include descriptions — read them, they are the short contract. Search ranks by name and description, so check the top hit is the component you meant.
+- Working in this file: use the names from search and resolve the objects locally (script below).
+- Working in another file (a client polygon that uses this library): import by the keys search returns — `importComponentSetByKeyAsync(componentSetKey)`, `importComponentByKeyAsync(componentKey)`, `importVariableByKeyAsync(key)`, `importStyleByKeyAsync(key)`.
+If search returns nothing (library unpublished or not added), fall back to the lookup by name. One read call that gives you everything:
 ```js
 const comp = figma.root.children.find(p => p.name === 'Components'); await comp.loadAsync();
 const ex = figma.root.children.find(p => p.name === 'Examples'); await ex.loadAsync();
