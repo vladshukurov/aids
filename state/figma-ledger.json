@@ -12,14 +12,22 @@
     "Archive · Spirit chat": "7:2821"
   },
   "sections": {
-    "Components / Kit and guide": "7:1169",
-    "Components / chip (legacy suggest, Amount, Swap)": "7:1112",
-    "Components / Card": "14:992",
-    "Components / Chat": "14:993",
-    "Components / Chat · Answer parts": "14:994",
-    "Components / Icons · SF Symbols": "7:15982",
+    "Cover / Cover frame": "33:753",
+    "Foundations / 01 · Theme": "33:156",
+    "Foundations / 02 · Color": "33:157",
+    "Foundations / 03 · Typography": "33:603",
+    "Foundations / 04 · Space & radius": "33:695",
     "Foundations / Theme preview · re:verse": "17:2",
-    "Foundations / Theme preview · Atlas": "17:102"
+    "Foundations / Theme preview · Atlas": "17:102",
+    "Components / 01 · Core": "7:1169",
+    "Components / 02 · Money input": "7:1112",
+    "Components / 03 · Sheets": "32:1627",
+    "Components / 04 · Card": "14:992",
+    "Components / 05 · Chat": "14:993",
+    "Components / 06 · Chat · Answer parts": "14:994",
+    "Components / 07 · Icons · SF Symbols": "7:15982",
+    "Examples / 01 · Base UI": "32:2784",
+    "Examples / 02 · Spirit chat": "32:2785"
   },
   "collections": {
     "Primitives / Color": "VariableCollectionId:10:987",
