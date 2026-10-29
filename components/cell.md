@@ -18,7 +18,7 @@ Any row in a list: transaction, account, goal, person, card, option in a sheet.
 | Checkbox Right / Checkbox Left | boolean | Selection. In sheets use Right |
 | Button | boolean | Small button on the right (e.g. "Copy") |
 | Caption Left | boolean | Shows the caption under the title |
-The avatar is a nested `Avatar` instance: change it with instance swap / its own properties.
+The avatar is an exposed nested `Avatar`: set its Style/Type/Sublogo on it. Selection on the right/left is an exposed `Selection control` named `Selection` / `Selection Left`: turn on `Checkbox Right`, then set Type (Checkbox/Radio) and State (On/Off) on the nested instance.
 
 ## Rules
 - IMPORTANT: a row with an amount on the right has no chevron.

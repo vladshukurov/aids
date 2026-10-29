@@ -25,3 +25,18 @@ Spirit talks in first person, leads the conversation and calms people down when 
 - Result first: "Sent.", "Done, €200 is here."
 - Never invent features or numbers. Numbers must match the other screens of the same person on the same day.
 - One main thought per answer. It lives in the Lead or in one Number.
+
+## Spirit personas (variables)
+Collection `Spirit persona`, modes neutral · analyst · trickster · caregiver. One mode switch changes:
+- the glow of `Spirit / Chat background` — `glow/1` main, `glow/2` warm, `glow/3` cool, `glow/4` accent, `glow/5` haze;
+- every text or `Answer / Lead` property bound to `voice/*`.
+
+| Variable | neutral | analyst | trickster | caregiver |
+|---|---|---|---|---|
+| voice/style | Clear and friendly; short; result first | Precise and calm; numbers first; no jokes | Playful and bold; light teasing; never about money worries | Warm; acknowledge the feeling, then the fact |
+| voice/greeting | How can I help you? | What should we look at today? | Alright, what are we fixing today? | I’m here. What’s on your mind? |
+| voice/confirm | €100 to Spain trip | Spain trip: +€100 | €100 to Spain? Bold | Let’s add €100 to Spain |
+| voice/reassure | Nothing moves without you | No money moves until you confirm | Relax, nothing moves without your tap | Take your time, nothing moves without you |
+| voice/done, voice/over budget | see Figma | | | |
+
+Writing new Spirit copy: read `voice/style` of the active persona and follow it. Hard rules (no invented features, numbers match, no full stop at the end) apply to every persona.

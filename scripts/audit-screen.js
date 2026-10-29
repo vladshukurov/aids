@@ -48,6 +48,19 @@ if (primaries.length > 1) errors.push(`${primaries.length} visible Primary butto
 // status bar and home indicator
 const names = await Promise.all(f.findAllWithCriteria({ types: ['INSTANCE'] }).map(async i => { const m = await i.getMainComponentAsync(); return m ? (m.parent && m.parent.type === 'COMPONENT_SET' ? m.parent.name : m.name) : ''; }));
 if (!names.includes('StatusBar')) errors.push('no StatusBar');
+// chat screens are dark-only
+if (names.includes('Spirit / Chat background')) {
+  const colorCol = (await figma.variables.getLocalVariableCollectionsAsync()).find(c => c.name === 'Color');
+  const modeId = f.explicitVariableModes && f.explicitVariableModes[colorCol.id];
+  const mode = modeId && colorCol.modes.find(m => m.modeId === modeId);
+  if (!mode || mode.name !== 'dark') errors.push('chat screen must be in Color mode dark (set it on the screen frame)');
+}
+// legacy chips inside BottomBar
+for (const i of f.findAllWithCriteria({ types: ['INSTANCE'] })) {
+  if (!i.componentProperties) continue;
+  const k = Object.keys(i.componentProperties).find(x => x.startsWith('Suggestions#'));
+  if (k && i.componentProperties[k].value === true) warnings.push(`BottomBar Suggestions is on (${i.id}); new screens keep it off and use a Suggest row above`);
+}
 if (!names.some(n => /HomeIndicator|Home Indicator/.test(n))) warnings.push('no HomeIndicator');
 if (Math.round(f.width) !== 402) warnings.push(`width ${f.width}, expected 402`);
 

@@ -30,3 +30,6 @@ What does not: card art (`Card / Art`), photos, avatars, the re:verse wordmark, 
 
 ## Adding a client brand
 Add a mode to `Theme`, fill the 10 variables, check `Foundations / Theme preview` and two Examples screens. Accent must not be green: green means incoming money.
+
+## Spirit persona — third switch (chat only)
+Mode of collection `Spirit persona` on a chat frame: neutral, analyst, trickster, caregiver. Changes the glow colors and the `voice/*` copy. See `foundations/voice.md`. Example: Examples → `03 · Spirit personas`.

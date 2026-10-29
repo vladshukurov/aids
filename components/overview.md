@@ -30,6 +30,18 @@ Search Figma by the name in the first column. Read the md file before using a co
 | Chat / User message | user bubble | What the person said | [chat.md](chat.md) |
 | Chat / Message, Answer / *, MD / Block | Spirit answer, AI response | Building a Spirit answer | [chat.md](chat.md) |
 | Spirit / Chat background | chat background, glow | First child of every chat screen | [chat.md](chat.md) |
+| Toggle | switch | Setting that applies immediately | [controls.md](controls.md) |
+| Selection control | checkbox, radio | Multi/single choice; also inside Cell (Selection) | [controls.md](controls.md) |
+| Progress | progress bar | Goal progress, money back, limits | [controls.md](controls.md) |
+| Section header | list header | Title + aside above a group of rows | [controls.md](controls.md) |
+| Badge | tag, status | Pending / failed / received | [controls.md](controls.md) |
+| Divider | separator | Between groups | [controls.md](controls.md) |
+| Empty state | empty list | Nothing here yet + one action | [controls.md](controls.md) |
+| Alert | dialog, confirm | Irreversible action question | [controls.md](controls.md) |
+| Search field | search | Top of pickers and lists | [controls.md](controls.md) |
+| Avatar group | people stack | Split bill, shared goal | [controls.md](controls.md) |
+| Page dots | pager | Card carousel | [controls.md](controls.md) |
+| Cell / Skeleton | loading row | Placeholder rows while loading | [controls.md](controls.md) |
 | Icon / * | icon | 24 outline icons for rows and buttons | instance swap |
 | SF / * | SF Symbol | Category and action icons (outline and fill) | instance swap |
 

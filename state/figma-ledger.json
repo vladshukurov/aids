@@ -27,7 +27,12 @@
     "Components / 06 · Chat · Answer parts": "14:994",
     "Components / 07 · Icons · SF Symbols": "7:15982",
     "Examples / 01 · Base UI": "32:2784",
-    "Examples / 02 · Spirit chat": "32:2785"
+    "Examples / 02 · Spirit chat": "32:2785",
+    "Components / 08 · Controls & feedback": "47:1485",
+    "Foundations / 05 · Mode matrix": "42:20772",
+    "Examples / 03 · Spirit personas": "46:2134",
+    "Examples / 04 · Persona reference (from Vlad)": "39:30192",
+    "Polygon / Split bill self-run": "51:292"
   },
   "collections": {
     "Primitives / Color": "VariableCollectionId:10:987",
@@ -55,6 +60,21 @@
       "radius/sheet",
       "font/text",
       "font/mono"
+    ],
+    "personaModes": [
+      "neutral",
+      "analyst",
+      "trickster",
+      "caregiver"
+    ],
+    "personaVariables": [
+      "glow/1..5",
+      "voice/style",
+      "voice/greeting",
+      "voice/confirm",
+      "voice/done",
+      "voice/reassure",
+      "voice/over budget"
     ]
   },
   "components": {
@@ -91,9 +111,22 @@
     "Action button": "7:20486",
     "Spirit / Chat background": "31:5058",
     "Answer / Check": "7:3940",
-    "Answer / Lead": "7:3901",
+    "Answer / Lead": "51:2162",
     "Answer / Ask": "7:3938",
-    "Avatar · Style=Goal": "38:27912"
+    "Avatar · Style=Goal": "38:27912",
+    "_Answer / Lead (legacy)": "7:3901",
+    "Toggle": "47:1494",
+    "Selection control": "47:1503",
+    "Progress": "47:1533",
+    "Section header": "47:1534",
+    "Badge": "47:1547",
+    "Divider": "47:1552",
+    "Empty state": "48:1482",
+    "Alert": "48:1538",
+    "Search field": "48:1547",
+    "Avatar group": "48:1589",
+    "Page dots": "48:1602",
+    "Cell / Skeleton": "48:1603"
   },
   "examples": {
     "Home feed_example": "21:26447",

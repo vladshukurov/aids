@@ -9,7 +9,7 @@ Frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute a
 | Part | Component | Notes |
 |---|---|---|
 | Person's message | `Chat / User message` (or `Answer / Ask`, the same bubble) | right-aligned |
-| Lead | `Answer / Lead` | white answer + grey continuation on a new line. Max 3 lines when a block follows |
+| Lead | `Answer / Lead` | properties Answer (white) + Continuation (grey) + Show continuation. Bind them to `voice/*` variables for persona copy. Max 3 lines when a block follows. (`_Answer / Lead (legacy)` is the old single-layer version — don't use) |
 | Hero number | `Answer / Number` | only money the person has (balance, total) or the transfer sum |
 | 2–3 numbers | `Answer / Number row` | comparisons, "was → now" (old value grey) |
 | Paragraph | `Answer / Body` | 1–3 sentences |

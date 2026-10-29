@@ -22,18 +22,16 @@ Full rules: [../components/chat.md](../components/chat.md), voice: [../foundatio
 | List of objects | Lead + Cells (no chevrons) | — |
 "Confirm X" means the Check before the money moves, unless the request says "after" / "done".
 
-## Lead (two-tone)
-`Answer / Lead` has one text node: white part, line break, grey part. Setting `characters` resets the colors, so re-apply them:
+## Lead
+`Answer / Lead` has two text properties: `Answer` (white, the result) and `Continuation` (grey, what Spirit does next), plus `Show continuation`. Each part max ~28 characters, no full stop.
+To make copy follow the Spirit persona, bind the properties to variables instead of typing text:
 ```js
-const t = lead.findOne(n => n.type === 'TEXT');
-const segs = t.getStyledTextSegments(['fills']);           // [white, grey] before editing
-const white = segs[0].fills, grey = segs[segs.length - 1].fills;
-for (const s of t.getStyledTextSegments(['fontName'])) await figma.loadFontAsync(s.fontName);
-const a = 'Alright, €100 to Spain trip', b = 'It lands at €500 of €3,500';
-t.characters = a + '\n' + b;
-t.setRangeFills(0, a.length, white); t.setRangeFills(a.length + 1, t.characters.length, grey);
+inst.setProperties({ [key('Answer')]: figma.variables.createVariableAlias(V('voice/confirm')),
+                     [key('Continuation')]: figma.variables.createVariableAlias(V('voice/reassure')) });
 ```
-Length: each part max ~28 characters so the Lead stays within 2–3 lines when a block follows. Shorten the grey part first. No full stop at the end of either part.
+
+## Persona
+Set the `Spirit persona` mode (neutral, analyst, trickster, caregiver) on the chat frame. It recolors the glow (`glow/1–5`) and switches every text bound to `voice/*`. Before writing your own Spirit copy, read `voice/style` for the persona and write in that tone.
 
 ## Check (money moves)
 `Answer / Check` properties: `Label`, `Amount`, `Caption`; exposed Cells `From` and `To`.

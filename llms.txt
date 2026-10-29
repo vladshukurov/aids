@@ -11,10 +11,11 @@
 - [Tokens](foundations/tokens.md): collections, which token for which role, spacing, radius
 - [Theming](foundations/theming.md): brand themes (re:verse, Atlas), light/dark
 - [Typography](foundations/typography.md): text styles and when to use them
-- [Voice](foundations/voice.md): UI copy and Spirit tone of voice
+- [Voice](foundations/voice.md): UI copy, Spirit tone of voice and the four personas (glow + voice variables)
 
 ## Components
 - [Catalog](components/overview.md): every component, its synonyms and the file to read
+- [Controls & feedback](components/controls.md): toggle, checkbox/radio, progress, badge, alert, empty state, search, avatar group…
 
 ## Recipes
 - [Recipes index](recipes/overview.md): home feed, account, card screen, picker, send/top up (amount → confirm), Spirit chat answer
