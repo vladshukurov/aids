@@ -23,6 +23,6 @@ After each `run-evals`, update the table below so critics find the latest golden
 | Notifications | 82:2961 | specs/examples/notifications.json |
 | USD account | 82:3520 | specs/examples/account-usd.json |
 | Send · confirm / pay from | 86:3837, 86:3988 | specs/examples/send-confirm.json |
-| C1–C4 Freeze card | 86:4358, 86:5052, 86:5664, 86:5988 | scenarios/freeze-card.json |
+| C1–C4 Freeze card | 91:4069, 91:4784, 91:5396, 91:5720 | scenarios/freeze-card.json |
 | Chat · one fact / numbers | 86:6530, 86:6627 | specs/examples/chat-salary.json, chat-food-october.json |
 | Chat · money check (neutral, caregiver), after | 86:6739, 86:6952, 86:7135 | specs/examples/chat-spain-topup.json |

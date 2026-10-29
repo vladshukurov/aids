@@ -406,6 +406,8 @@ async function baseScreen(sp) {
   if (bottom.cta) add(f, await make('HomeIndicator'));
   if (bottom.cta || bottom.keyboard) { if (f.height < 874) { f.primaryAxisSizingMode = 'FIXED'; f.resize(402, 874); c.layoutSizingVertical = 'FILL'; } }
   else if (f.height < 874) { f.primaryAxisSizingMode = 'FIXED'; f.resize(402, 874); }
+  // a modal state is what the device shows: one 874 viewport, the alert centred in it
+  if (sp.overlay && f.height > 874) { f.primaryAxisSizingMode = 'FIXED'; f.resize(402, 874); }
   if (chat) { absolute(f, chat, 0, f.height - chat.height); chat.resize(402, chat.height); chat.constraints = { horizontal: 'STRETCH', vertical: 'MAX' }; }
   if (!bottom.cta && !bottom.keyboard && !hasHI) { const hi = await make('HomeIndicator'); if (hi) { absolute(f, hi, 0, f.height - hi.height); hi.constraints = { horizontal: 'STRETCH', vertical: 'MAX' }; } }
   if (sp.overlay) await overlay(f, sp.overlay, sp);
@@ -429,7 +431,7 @@ async function overlay(f, o, sp) {
     if (!al) return;
     set(sub(al, 'Action'), { Label: a.action }, 'Alert action'); set(sub(al, 'Cancel'), { Label: a.cancel || 'Cancel' }, 'Alert cancel');
     role(sp, 'cta', sub(al, 'Action')); role(sp, 'cancel', sub(al, 'Cancel'));
-    absolute(f, al, 40, 0); al.resize(322, al.height); al.y = Math.round((f.height - al.height) / 2);
+    absolute(f, al, 40, 0); al.resize(322, al.height); al.y = Math.round((Math.min(f.height, 874) - al.height) / 2);
   }
 }
 
