@@ -12,7 +12,8 @@
 | 3 | MD: foundations (tokens, theming, typography, voice), components (overview + 10 файлов) | готово |
 | 4 | Examples: 9 эталонов `*_example` (home, card, account, picker, amount, confirm, 3 чата) + recipes (6) | готово |
 | 5 | Skills: build-screen, build-flow, audit-screen; агент flow-reviewer; scripts/audit-screen.js | готово |
-| 6 | Полигон и evals: rubric, 13 экранов + 2 флоу в prompts.md; первый холодный прогон (запрос №2) | идёт |
+| 6 | Полигон и evals: два холодных прогона (19/20 и 18/20), все находки исправлены в компонентах и доках, журнал `evals/log.md`. Файл организован: Cover, доски Foundations, нумерованные секции, Examples по группам | готово |
+| 6b | Опубликовать библиотеку (руками в Figma) → проверить search_design_system и описания; прогнать остальные запросы из prompts.md и build-flow | |
 | 7 | Демо: сценарии показа, 2–3 скринкаста | |
 
 ## Проверить на практике (не подтверждено источниками)
