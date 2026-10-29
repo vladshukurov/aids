@@ -6,8 +6,8 @@ description: Build one mobile banking screen in the re:verse DS Figma file from 
 # Build a screen
 
 ## 0. Setup (once per session)
-- Figma file key: `qUknPCIey4DG3PH19e1OmD`. Call `create_session` with it.
-- Load the Figma `figma-use` skill before the first `use_figma`: via the `/figma-use` skill, `get_figma_skill`, or the MCP resource `skill://figma/figma-use/SKILL.md` — whichever your environment has.
+- Figma file key: `qUknPCIey4DG3PH19e1OmD`. Call `create_session` with it and pass the returned `sessionId` to every Figma call.
+- Load the Figma skills `figma-use` and `figma-generate-design` before the first `use_figma`: via `/figma-use`, `get_figma_skill`, or the MCP resource `skill://figma/<name>/SKILL.md` — whichever your environment has.
 - If there are two Figma MCP servers, run `whoami` on both and use the one with an editor seat on this file.
 - Read `CLAUDE.md`, `foundations/persona.md`, then `recipes/overview.md`.
 
@@ -17,7 +17,7 @@ description: Build one mobile banking screen in the re:verse DS Figma file from 
 - Take every number and name from `foundations/persona.md`; check before → after math.
 
 ## 2. Find components, variables, styles
-Try `search_design_system` first (one intent per query). IMPORTANT: if the library is not published it returns nothing — then look things up by name in the file. One read call that gives you everything:
+If `state/figma-ledger.json` says `"libraryPublished": true`, use `search_design_system` (one intent per query). Otherwise skip it — it returns nothing for an unpublished library — and look things up by name in the file. One read call that gives you everything:
 ```js
 const comp = figma.root.children.find(p => p.name === 'Components'); await comp.loadAsync();
 const ex = figma.root.children.find(p => p.name === 'Examples'); await ex.loadAsync();
@@ -45,7 +45,7 @@ const setP = (inst, map) => { const keys = Object.keys(inst.componentProperties)
 Read `components/<name>.md` for every component you use for the first time.
 
 ## 3. Build on page Polygon
-- Place the new frame to the right of existing frames, 120 gap. Name it `<Recipe> · <what>`.
+- Place the new frame to the right of existing frames, 120 gap (empty page: at 0,0). Name it `<Recipe> · <what>`.
 - Frame: 402×874, vertical auto layout, fill bound to `background/primary`, clip content. Chat screens: frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute, 0,0).
 - Only component instances and auto-layout wrapper frames; text you add yourself gets a text style and a `Color` text variable.
 - Text in instances: component properties via `setP`. Nested exposed instances (e.g. `Title` inside `TopBar`) appear in `componentProperties` of the parent too. If a text has no property, override `characters` on the nested text node (load its font first). Never detach.
@@ -54,8 +54,9 @@ Read `components/<name>.md` for every component you use for the first time.
 - Build the whole screen in one `use_figma` call when possible; return created ids.
 
 ## 4. Check
-- Run `scripts/audit-screen.js` (paste its body into `use_figma`, set `FRAME_ID`). Fix every error.
-- One screenshot at scale 0.5. Look for clipped text, wrong mode, leftovers.
+- Run `scripts/audit-screen.js` in its own `use_figma` call (it ends with `return`; paste the body, set `FRAME_ID`). Fix every error, then run it again.
+- If the audit flags something inside a component (not your screen), report it as a component bug; don't recolor the instance.
+- One screenshot: `await frame.screenshot({scale: 0.5})` inside `use_figma`, or `get_screenshot`. Look for clipped text, wrong mode, leftovers, Lead longer than 3 lines.
 - Report: recipe, components, audit result, rubric score (`evals/rubric.md`), anything you could not do or had to guess.
 
 ## Never

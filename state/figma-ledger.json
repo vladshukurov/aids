@@ -89,7 +89,11 @@
     "Top up / From": "7:1750",
     "Action / round": "7:15995",
     "Action button": "7:20486",
-    "Spirit / Chat background": "31:5058"
+    "Spirit / Chat background": "31:5058",
+    "Answer / Check": "7:3940",
+    "Answer / Lead": "7:3901",
+    "Answer / Ask": "7:3938",
+    "Avatar · Style=Goal": "38:27912"
   },
   "examples": {
     "Home feed_example": "21:26447",
@@ -105,5 +109,6 @@
   "notes": [
     "Never hardcode style or variable ids; resolve by name (style ids end with a comma).",
     "search_design_system returns nothing until the library is published; use the lookup script in build-screen SKILL.md."
-  ]
+  ],
+  "libraryPublished": false
 }

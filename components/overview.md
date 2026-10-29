@@ -25,7 +25,7 @@ Search Figma by the name in the first column. Read the md file before using a co
 | Card / Linked | other bank card | Cards of other banks | [card.md](card.md) |
 | Chip | filter, tag, option chip | Filters and selectable options | [chip-suggest.md](chip-suggest.md) |
 | Suggest | suggestion, follow-up, quick reply | Tappable suggestion that sends a chat message | [chip-suggest.md](chip-suggest.md) |
-| BottomBar | chat input | Input bar of the Spirit chat | [chat.md](chat.md) |
+| BottomBar | chat input | Input bar at the bottom (Suggestions off on new screens) | [chat.md](chat.md) |
 | Chat / Top bar | chat header | Header of the Spirit chat | [chat.md](chat.md) |
 | Chat / User message | user bubble | What the person said | [chat.md](chat.md) |
 | Chat / Message, Answer / *, MD / Block | Spirit answer, AI response | Building a Spirit answer | [chat.md](chat.md) |

@@ -12,7 +12,7 @@ Read this file first. Then open `llms.txt` and read only the files your task nee
 
 ## Workflow (every screen)
 1. Read the recipe in `recipes/` that matches the request. No recipe → read the nearest one and say so.
-2. `search_design_system` for every component the recipe lists. Search by role ("bottom sheet title"), one intent per query.
+2. Find every component the recipe lists: `search_design_system` when the library is published (`libraryPublished` in the ledger), otherwise the lookup script in `.claude/skills/build-screen/SKILL.md`.
 3. Build in the Polygon page: a 402×874 frame, auto layout, instances + bound variables only.
 4. Self-check with `evals/rubric.md` and one screenshot. Fix, then report.
 

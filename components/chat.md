@@ -8,7 +8,7 @@ Frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute a
 ## One answer = vertical stack, itemSpacing 0, spacing via `Answer / Space`
 | Part | Component | Notes |
 |---|---|---|
-| Person's message | `Chat / User message` (or `Answer / Ask`) | right-aligned |
+| Person's message | `Chat / User message` (or `Answer / Ask`, the same bubble) | right-aligned |
 | Lead | `Answer / Lead` | white answer + grey continuation on a new line. Max 3 lines when a block follows |
 | Hero number | `Answer / Number` | only money the person has (balance, total) or the transfer sum |
 | 2–3 numbers | `Answer / Number row` | comparisons, "was → now" (old value grey) |
@@ -17,7 +17,7 @@ Frame in `Color` mode `dark`, first child `Spirit / Chat background` (absolute a
 | List | `Answer / List item` | 3–6 items; Number type only for steps |
 | Table | `Answer / Table row` | Head + Rows, 2–3 columns, no lines between rows |
 | Rows | `Cell` (no chevron) / `Answer / Card row` | accounts, transactions, recipients |
-| Check before money moves | `Answer / Check` | from → to, Transfer amount, caption "SEPA INSTANT · NO FEE · ARRIVES IN SECONDS" |
+| Check before money moves | `Answer / Check` | properties Label, Amount, Caption; exposed Cells From / To. Cases table in `recipes/chat-answer.md` |
 | Face ID | `Answer / Face ID` | only when money leaves re:verse or for secrets |
 | Meta | `Answer / Meta` | source · time, last |
 Richer formatting (callout, key-value, bars, details) → `MD / Block` with `Type=…`.
