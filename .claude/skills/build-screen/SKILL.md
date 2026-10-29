@@ -40,7 +40,7 @@ Working in another file → import by the keys search returns (`importComponentS
 
 ## 3. Build on page Polygon
 - Frame 402 wide, vertical auto layout, `background/primary`, height 874 or taller if content needs it. Chat: `Color` mode dark + `Spirit / Chat background` first.
-- Blocks first: `Block / Hero amount` (or Card L / custom hero), `Block / Action row`, `Block / List group` ×2–4, `Block / Bottom chat` (absolute at the bottom; bottom space = its height − 40). Sheets: `Block / Option sheet` over the dimmed object screen.
+- Blocks first: `Block / Hero amount` (or Card L / custom hero), `Block / Action row`, `Block / List group` ×2–4, `Block / Bottom chat` (absolute at the bottom; bottom space ≥ its height, so the last element clears it when scrolled to the end). Sheets: `Block / Option sheet` over the dimmed object screen.
 - Spacing exactly as layout.md §3 (40–60 / 24 / 48 / 12 / 20), bound to `space/*`.
 - One `use_figma` call for the whole screen; return the frame id.
 

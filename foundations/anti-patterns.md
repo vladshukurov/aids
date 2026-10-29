@@ -19,7 +19,9 @@ Signs that a screen looks assembled instead of designed. Check your screenshot a
 | Icon doesn't mean the row (eye for passcode, document for chat) | Pick by meaning: shield for passcode, question mark for help, bells for notifications |
 | Label truncated or touching the pill edge | Shorten the copy (1–2 words), never shrink the type |
 | Suggestions row overflowing the screen | ≤ 2 suggestions on base screens, each ≤ 3 words |
-| Bottom chat overlapping the last content | Bottom space = Bottom chat height − 16 |
+| Bottom chat overlapping the last content | Bottom space ≥ Bottom chat height (+8) |
+| A suggestion that repeats a row on the screen ("Change passcode" under a Passcode row) | Suggest a question the screen doesn't answer ("How do I close my account?") |
+| Uneven spacing around a middle dot | One text run with " · " or equal gaps on both sides |
 
 ## Product slips
 - "Spirit" or its logo in base UI (section titles, captions) → say "Assistant" or describe the setting.
