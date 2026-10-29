@@ -1,0 +1,13 @@
+{
+  "id": "chat-salary",
+  "name": "Chat · one fact",
+  "archetype": "chat",
+  "persona": "neutral",
+  "caption": "One fact → a Lead only: the answer in white, what the assistant will do next in grey. One follow-up.",
+  "topic": "SALARY",
+  "ask": "When does my salary land?",
+  "answer": [
+    { "lead": ["Today, €2,400", "I'll tell you when it's in"] }
+  ],
+  "suggest": ["Plan the rest of October"]
+}

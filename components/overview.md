@@ -1,9 +1,10 @@
 # Components catalog
 
-Search Figma by the name in the first column. Read the md file before using a component for the first time in a task.
+Search Figma by the name in the first column. Read the md file before using a component for the first time in a task. Every property and variant value: [_properties.md](_properties.md) (generated). In specs you rarely name components: blocks and row kinds do it (`specs/format.md`).
 
 | Component | Also called | Use for | Read |
 |---|---|---|---|
+| Block / Hero amount, Action row, List group, Bottom chat, Option sheet | hero, section, list, sheet | Ready compositions of Object screens and sheets — build from these first | [blocks.md](blocks.md) |
 | Button | CTA, primary button | One main action, secondary and destructive actions | [button.md](button.md) |
 | Action button | round action, quick action | Row of round actions under a balance | [amount.md](amount.md) |
 | Cell | row, list item, transaction row | Any list row: transaction, account, person, option | [cell.md](cell.md) |
@@ -42,7 +43,7 @@ Search Figma by the name in the first column. Read the md file before using a co
 | Avatar group | people stack | Split bill, shared goal | [controls.md](controls.md) |
 | Page dots | pager | Card carousel | [controls.md](controls.md) |
 | Cell / Skeleton | loading row | Placeholder rows while loading | [controls.md](controls.md) |
-| Icon / * | icon | 24 outline icons for rows and buttons | instance swap |
-| SF / * | SF Symbol | Category and action icons (outline and fill) | instance swap |
+| Icon / * | icon | Chevrons, arrows, ×, dots | [icons.md](icons.md) |
+| SF / * | SF Symbol | Row and action icons — SF outline only, by meaning | [icons.md](icons.md) |
 
 Internal parts start with `_` and are never placed directly.

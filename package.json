@@ -1,0 +1,14 @@
+{
+  "name": "reverse-ds",
+  "version": "1.2.0",
+  "private": true,
+  "description": "re:verse DS — AI-ready mobile banking design system for Figma: rules, recipes, specs, renderer and checks for Claude Code and Codex",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "lint": "node scripts/lint-spec.mjs specs/examples/*.json scenarios/*.json",
+    "check": "node scripts/check-docs.mjs",
+    "sync": "node scripts/sync-agents.mjs",
+    "build": "node scripts/build-call.mjs"
+  }
+}

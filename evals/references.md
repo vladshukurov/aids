@@ -1,15 +1,21 @@
 # Reference screens per archetype
 
-Product-grade screens the screen-critic compares against. Client file `FnPy6Nds2owS0D7CvNaZJ0` is read-only.
+What the screen-critic compares against. All references live in this repo's Figma file (`qUknPCIey4DG3PH19e1OmD`), so everyone with access to the file can use them. Golden renders of `specs/examples/*` are the current standard; the hand-built `_example` frames show the product look they come from.
 
 | Archetype | Reference | Where |
 |---|---|---|
-| Object (account) | AC / 1 · Main account | FnPy6Nds2owS0D7CvNaZJ0 · 14762:33711 |
-| Object (card) | CD / 1 · Card, CD / 3 · Card frozen | FnPy… · 14765:34511, 14765:35924 |
-| Object (budget, chart hero) | V9 / 1 · Budget | FnPy… · 14665:50808 |
-| Object (goal) | GD / 2 · Spain trip | FnPy… · 14529:36541 |
-| Sheet (choice with consequences) | CD / 5 · Replace card | FnPy… · 14765:37055 |
-| Picker | Source picker_example | qUknPCIey4DG3PH19e1OmD · 21:27134 |
-| Amount / confirm | Amount entry_example, Confirm_example | qUkn… · 21:27409, 31:5165 |
-| Chat | Chat · money check_example, personas | qUkn… · 21:27763, 46:2134 |
-| Profile-like Object | Profile · round 2 (after critic) | qUkn… · 63:1442 |
+| Object (account) | `Account_example`; golden `USD account` | Examples · 21:26776; Polygon · evals (latest) |
+| Object (card) | `Card screen_example`; golden `C1 · Card frozen`, `C4 · Card after` | Examples · 21:26527; Polygon · evals |
+| Object (profile-like) | golden `Profile` | Polygon · evals |
+| List (settings) | golden `Notifications` | Polygon · evals |
+| Picker / Sheet | `Source picker_example`; golden `Send · pay from` | Examples · 21:27134; Polygon · evals |
+| Amount / confirm | `Amount entry_example`, `Confirm_example`; golden `Send · confirm` | Examples · 21:27409, 31:5165 |
+| Chat | `Chat · money check_example`, `Chat · numbers_example`, `Chat · one fact_example`, personas | Examples · 21:27763, 21:27681, 21:27608, 46:2134 |
+| Home | `Home feed_example` | Examples · 21:26447 |
+
+After each `run-evals`, update the "Polygon · evals" ids below so critics find the latest golden frames.
+
+## Latest golden frames
+| Screen | Frame id |
+|---|---|
+| (filled by run-evals) | |

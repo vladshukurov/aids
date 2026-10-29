@@ -18,7 +18,7 @@ Signs that a screen looks assembled instead of designed. Check your screenshot a
 | Outline and filled icons mixed in one list | One family per screen: SF outline (`SF / *` without .fill). Kit `Icon / *` mixes filled and outline — use it only for chevrons, arrows, x, dots |
 | Icon doesn't mean the row (eye for passcode, document for chat) | Pick by meaning from the SF outline set: `SF / lock` passcode, `SF / bell` notifications, `SF / questionmark.circle` help, `SF / sun.max` appearance |
 | Label truncated or touching the pill edge | Shorten the copy (1–2 words), never shrink the type |
-| Suggestions row overflowing the screen | ≤ 2 suggestions on base screens, each ≤ 3 words |
+| Suggestions row overflowing the screen | ≤ 2 suggestions on base screens, ≤ 40 characters together |
 | Bottom chat overlapping the last content | Bottom space ≥ Bottom chat height (+8) |
 | A suggestion that repeats a row on the screen ("Change passcode" under a Passcode row) | Suggest a question the screen doesn't answer ("How do I close my account?") |
 | Uneven spacing around a middle dot | One text run with " · " or equal gaps on both sides |

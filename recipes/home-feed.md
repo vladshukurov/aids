@@ -1,6 +1,6 @@
 # Recipe: Home feed
 
-Figma example: `Home feed_example`
+Figma example: `Home feed_example` · archetype Home. No spec yet: the header and the peek have no blocks; build the statement with `{ "statement": [...] }` and the rest with `component` blocks.
 
 ## When
 Home screen, "what's new", an insight or event that the product wants the person to notice.

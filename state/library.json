@@ -1,0 +1,172 @@
+{
+  "fileKey": "qUknPCIey4DG3PH19e1OmD",
+  "generated": null,
+  "source": "seed from the old hand ledger; regenerate with the sync-library skill",
+  "components": {
+    "Card": {
+      "id": "7:15132"
+    },
+    "Card / Linked": {
+      "id": "7:15381"
+    },
+    "Card / Art": {
+      "id": "7:15485"
+    },
+    "Logo / Visa": {
+      "id": "7:15483"
+    },
+    "Chat / Top bar": {
+      "id": "7:6619"
+    },
+    "Chat / User message": {
+      "id": "7:19737"
+    },
+    "Chat / Message": {
+      "id": "7:18356"
+    },
+    "MD / Block": {
+      "id": "7:18215"
+    },
+    "Suggest": {
+      "id": "7:19705"
+    },
+    "Chip": {
+      "id": "7:19724"
+    },
+    "Answer parts frame": {
+      "id": "7:3893"
+    },
+    "Button": {
+      "id": "7:1182"
+    },
+    "Cell": {
+      "id": "7:1482"
+    },
+    "Cell Small": {
+      "id": "7:1513"
+    },
+    "Avatar": {
+      "id": "7:1557"
+    },
+    "Sublogo": {
+      "id": "7:1523"
+    },
+    "Text Field": {
+      "id": "7:1630"
+    },
+    "Select": {
+      "id": "7:1695"
+    },
+    "TopBar": {
+      "id": "7:1433"
+    },
+    "Title": {
+      "id": "7:1440"
+    },
+    "BottomBar": {
+      "id": "7:1444"
+    },
+    "SheetBar": {
+      "id": "7:1460"
+    },
+    "StatusBar": {
+      "id": "7:1247"
+    },
+    "HomeIndicator": {
+      "id": "7:1245"
+    },
+    "Keyboard": {
+      "id": "7:1249"
+    },
+    "Amount": {
+      "id": "7:1135"
+    },
+    "Segmented control": {
+      "id": "7:1421"
+    },
+    "Sheet - Full Screen": {
+      "id": "7:1745"
+    },
+    "Top up / From": {
+      "id": "7:1750"
+    },
+    "Action / round": {
+      "id": "7:15995"
+    },
+    "Action button": {
+      "id": "7:20486"
+    },
+    "Spirit / Chat background": {
+      "id": "31:5058"
+    },
+    "Answer / Check": {
+      "id": "7:3940"
+    },
+    "Answer / Lead": {
+      "id": "51:2162"
+    },
+    "Answer / Ask": {
+      "id": "7:3938"
+    },
+    "Avatar · Style=Goal": {
+      "id": "38:27912"
+    },
+    "_Answer / Lead (legacy)": {
+      "id": "7:3901"
+    },
+    "Toggle": {
+      "id": "47:1494"
+    },
+    "Selection control": {
+      "id": "47:1503"
+    },
+    "Progress": {
+      "id": "47:1533"
+    },
+    "Section header": {
+      "id": "47:1534"
+    },
+    "Badge": {
+      "id": "47:1547"
+    },
+    "Divider": {
+      "id": "47:1552"
+    },
+    "Empty state": {
+      "id": "48:1482"
+    },
+    "Alert": {
+      "id": "48:1538"
+    },
+    "Search field": {
+      "id": "48:1547"
+    },
+    "Avatar group": {
+      "id": "48:1589"
+    },
+    "Page dots": {
+      "id": "48:1602"
+    },
+    "Cell / Skeleton": {
+      "id": "48:1603"
+    },
+    "Block / Hero amount": {
+      "id": "57:1518"
+    },
+    "Block / Action row": {
+      "id": "57:1558"
+    },
+    "Block / List group": {
+      "id": "57:1559"
+    },
+    "Block / Bottom chat": {
+      "id": "58:1586"
+    },
+    "Block / Option sheet": {
+      "id": "58:1612"
+    }
+  },
+  "icons": {},
+  "variables": {},
+  "textStyles": []
+}

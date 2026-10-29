@@ -1,21 +1,24 @@
 # Recipes
 
-Each recipe has a Figma example component on the Examples page (search `<name>_example`). Start from the closest example: read its structure, then build your screen from instances in the same order. Never copy-detach the example.
+A recipe says which blocks a screen type has, in which order, with which data. Each has a ready spec in `specs/examples/` — copy the closest one and change the content. Figma `_example` frames on the Examples page show older hand-built versions; the specs are the current standard.
 
-| Request sounds like | Recipe | Figma example |
+| Request sounds like | Recipe | Spec to start from |
 |---|---|---|
-| home, feed, "what's new", insight | [home-feed.md](home-feed.md) | Home feed_example |
-| account, balance, wallet, sub-accounts | [account.md](account.md) | Account_example |
-| card, card details, freeze card | [card-screen.md](card-screen.md) | Card screen_example |
-| choose source / account / recipient, picker, list in a sheet | [picker.md](picker.md) | Source picker_example |
-| send money, top up, enter amount, confirm payment | [money-move.md](money-move.md) | Amount entry_example, Confirm_example |
-| Spirit, chat, AI answer, assistant | [chat-answer.md](chat-answer.md) | Chat · one fact / numbers / money check_example |
+| account, balance, wallet, sub-accounts | [account.md](account.md) | `specs/examples/account-usd.json` |
+| card, card details, freeze / block / replace card | [card-screen.md](card-screen.md) | `scenarios/freeze-card.json` (c1, c4) |
+| profile, me, personal details | [profile.md](profile.md) | `specs/examples/profile.json` |
+| settings, notifications, privacy, any list of switches | [settings.md](settings.md) | `specs/examples/notifications.json` |
+| transactions, history, payments list | [transactions.md](transactions.md) | — (groups by day, see recipe) |
+| choose source / account / recipient, picker, list in a sheet | [picker.md](picker.md) | `specs/examples/send-confirm.json` (sheet) |
+| send money, top up, enter amount, confirm payment | [money-move.md](money-move.md) | `specs/examples/send-confirm.json` |
+| home, feed, "what's new", insight | [home-feed.md](home-feed.md) | — (component blocks, see recipe) |
+| Spirit, chat, AI answer, assistant | [chat-answer.md](chat-answer.md) | `specs/examples/chat-*.json` |
 
-No match → pick the nearest recipe, say which one you used and why.
+No match → pick the nearest recipe, say which one you used and why. When the screen ships (critic ≥ 8), write the new recipe and add its spec to `specs/examples/`.
 
 ## Shared screen rules
-- Frame 402×874, `background/primary`, vertical auto layout, clip.
+- Frame 402×874 (taller when content needs it), `background/primary`, vertical auto layout, clip. The renderer does this.
 - `StatusBar` first, `HomeIndicator` last.
-- Content side padding 16 (`space/screen margin`).
+- Spacing: `foundations/layout.md` §3.
 - One Primary per light screen.
-- Real-looking data: one person (Alex Morgan), EUR by default, numbers that add up across screens.
+- Data from `foundations/persona.md` only: one person (Alex Morgan), numbers that add up across screens.

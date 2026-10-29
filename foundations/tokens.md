@@ -34,11 +34,9 @@ All values in the Figma file are variables. IMPORTANT: bind every fill, stroke, 
 Buttons, chips, badges and toggles already carry their colors. Do not recolor component instances.
 
 ## Spacing
-- Screen side padding: `space/screen margin` (16).
-- Between rows in a list: 0 (Cell has its own height). Between groups: `space/28`.
-- Section title → content: `space/12`. Hero → actions: `space/24`.
-- Bottom CTA: 16 from the sides, sits above `HomeIndicator`.
-- Use only the scale: 2, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 64, 80.
+- Values and where each one goes: `foundations/layout.md` §3 (the only place spacing numbers live).
+- Bind every gap and padding to `space/*`; side padding is `space/screen margin` (16).
+- Use only the scale: 2, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 64, 80. The audit flags anything else.
 
 ## Radius
 | Element | Token |

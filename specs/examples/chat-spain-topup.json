@@ -1,0 +1,58 @@
+{
+  "flow": "Top up Spain trip in chat",
+  "screens": [
+    {
+      "id": "chat-spain-check",
+      "name": "Chat · money check",
+      "archetype": "chat",
+      "persona": "neutral",
+      "caption": "Money moves → Check before it happens and exactly three chips. The Lead copy comes from the persona's voice variables.",
+      "topic": "SPAIN TRIP",
+      "ask": "Move €100 to Spain trip",
+      "answer": [
+        { "lead": ["$voice/confirm", "$voice/reassure"] },
+        { "check": {
+          "label": "You top up", "amount": "€100", "caption": "NO FEE · INSTANT",
+          "from": { "title": "Main account", "caption": "€1,340.00", "avatar": { "logo": "re:verse" } },
+          "to": { "title": "Spain trip", "caption": "€400 of €3,500", "avatar": { "goal": true } }
+        } }
+      ],
+      "suggest": ["Top up €100", "Other amount", "Cancel"],
+      "links": [{ "from": "suggest:Top up €100", "to": "chat-spain-done" }]
+    },
+    {
+      "id": "chat-spain-check-caregiver",
+      "name": "Chat · money check · caregiver",
+      "archetype": "chat",
+      "persona": "caregiver",
+      "caption": "Same answer, persona switched to caregiver: the glow and the Lead change, the layout and numbers don't.",
+      "topic": "SPAIN TRIP",
+      "ask": "Move €100 to Spain trip",
+      "answer": [
+        { "lead": ["$voice/confirm", "$voice/reassure"] },
+        { "check": {
+          "label": "You top up", "amount": "€100", "caption": "NO FEE · INSTANT",
+          "from": { "title": "Main account", "caption": "€1,340.00", "avatar": { "logo": "re:verse" } },
+          "to": { "title": "Spain trip", "caption": "€400 of €3,500", "avatar": { "goal": true } }
+        } }
+      ],
+      "suggest": ["Top up €100", "Other amount", "Cancel"]
+    },
+    {
+      "id": "chat-spain-done",
+      "name": "Chat · after the top-up",
+      "archetype": "chat",
+      "persona": "neutral",
+      "caption": "No success screen: the answer states the result, one receipt row, and Undo as the only chip.",
+      "topic": "SPAIN TRIP",
+      "ask": "Top up €100",
+      "answer": [
+        { "lead": ["Moved", "Spain trip has €500 of €3,500"] },
+        { "rows": [
+          { "title": "Spain trip", "caption": "From Main account · 9:41", "amount": "€100.00", "avatar": { "goal": true } }
+        ] }
+      ],
+      "suggest": ["Undo"]
+    }
+  ]
+}

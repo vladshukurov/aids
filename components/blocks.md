@@ -1,6 +1,6 @@
 # Blocks
 
-Figma: Components → `09 · Blocks`. Blocks are ready compositions with the measured spacing of the product screens. Build Object screens from blocks first, atoms second. Layout numbers: `foundations/layout.md`.
+Figma: Components → `09 · Blocks`. Blocks are ready compositions with the measured spacing of the product screens. Build Object screens from blocks first, atoms second. Layout numbers: `foundations/layout.md` §3. In a spec, blocks are chosen for you: `hero`, `actions`, a group with `rows`, `bottom.chat`, `overlay.sheet` (`specs/format.md`).
 
 | Block | Use for | Properties |
 |---|---|---|
@@ -10,15 +10,15 @@ Figma: Components → `09 · Blocks`. Blocks are ready compositions with the mea
 | Block / Bottom chat | Bottom of base Object screens | exposed `Suggestion 1`–`3` (questions about this object), booleans Suggestion 2–3, Suggestions |
 | Block / Option sheet | A choice with consequences (replace card, which account) | exposed `SheetBar` (Title), `Option 1`–`4` (Cells with radio), booleans Option 3–4, exposed `Action` (Primary) |
 
-## How to assemble an Object screen
+## How an Object screen is assembled (the renderer does this)
 ```
 Screen frame 402 × (874 or taller), vertical auto layout, background/primary
 ├─ StatusBar
 ├─ TopBar (Back; Title mono caps or empty)
-├─ Content (vertical, padding 16 sides, 48 top… see layout.md)
-│   ├─ Block / Hero amount          (or Card L, or chart + statement)
-│   ├─ Block / Action row           24 below the hero
-│   ├─ Block / List group  ×2–4     48 below actions, 48 between groups
+├─ Content (vertical, 16 sides; spacing from layout.md §3 as token-bound spacers)
+│   ├─ Block / Hero amount          (or Card L, or the person)
+│   ├─ Block / Action row
+│   ├─ Block / List group  ×2–4
 └─ Block / Bottom chat              absolute, pinned to the bottom
 ```
 

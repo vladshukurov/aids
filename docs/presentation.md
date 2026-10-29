@@ -85,5 +85,5 @@ state/             реестр id и ключей Figma
 
 ## Где что лежит
 - Figma: `AI-ready DS` (`qUknPCIey4DG3PH19e1OmD`), библиотека опубликована.
-- Пакет: `~/ai-ready-ds` (git). Начать с `README.ru.md` и `CLAUDE.md`.
+- Пакет: github.com/vladshukurov/aids. Начать с `README.md` и `docs/how-it-works.md`.
 - Ресёрч о том, как устроены AI-ready системы: `research/ai-ready-ds-research.md`.

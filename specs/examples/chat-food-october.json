@@ -1,0 +1,16 @@
+{
+  "id": "chat-food-october",
+  "name": "Chat · numbers",
+  "archetype": "chat",
+  "persona": "analyst",
+  "caption": "Compare → Lead + a number row + one sentence of meaning + the source. Analyst persona: numbers first, no jokes.",
+  "topic": "OCTOBER",
+  "ask": "How much did I spend on food in October?",
+  "answer": [
+    { "lead": ["€1,000 on food", "most of it eating out"] },
+    { "numberRow": [["€612", "Dining"], ["€388", "Groceries"]] },
+    { "body": "Dining is €72 more than in September. At this pace October ends **€43 over budget**" },
+    { "meta": "Card and account payments · 1–26 Oct" }
+  ],
+  "suggest": ["Show dining payments", "Set a dining limit"]
+}

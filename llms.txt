@@ -1,33 +1,45 @@
 # re:verse DS
 
-> An AI-ready mobile banking design system in Figma (file qUknPCIey4DG3PH19e1OmD). Agents assemble screens from local components and variables, following the rules and recipes below.
+> An AI-ready mobile banking design system in Figma (file qUknPCIey4DG3PH19e1OmD). Agents describe screens as JSON specs; a renderer builds them from the library's components and variables, following the rules and recipes below.
 
 ## Start here
-- [Agent rules](CLAUDE.md): hard rules and the build workflow
-- [Persona and data](foundations/persona.md): the one person, accounts, people and numbers every screen uses
-- [Figma ledger](state/figma-ledger.json): page, collection, component and example ids
+- [Agent rules](AGENTS.md): hard rules and the build pipeline (Claude Code reads it via CLAUDE.md)
+- [Spec format](specs/format.md): how to describe a screen or a flow
+- [Persona and data](foundations/persona.md): the one person, accounts, people, transactions and numbers every screen uses
+- [Figma map](state/figma.json): pages, sections, examples; [library](state/library.json): component ids, keys, properties (generated)
 
 ## Foundations
-- [Layout grammar](foundations/layout.md): how a screen is composed — think first, archetypes, zones and spacing, composition checks
-- [Tokens](foundations/tokens.md): collections, which token for which role, spacing, radius
-- [Theming](foundations/theming.md): brand themes (re:verse, Atlas), light/dark
+- [Layout grammar](foundations/layout.md): think first, archetypes, all spacing numbers, rows, sheet anatomy, composition checks
+- [Quality bar](foundations/quality.md): what finished work satisfies — logic, copy, craft, canvas
+- [Anti-patterns](foundations/anti-patterns.md): signs a screen looks assembled, not designed
+- [Tokens](foundations/tokens.md): collections, which color token for which role, radius
+- [Theming](foundations/theming.md): brand themes (re:verse, Atlas), light/dark, Spirit personas
 - [Typography](foundations/typography.md): text styles and when to use them
-- [Voice](foundations/voice.md): UI copy, Spirit tone of voice and the four personas (glow + voice variables)
+- [Voice](foundations/voice.md): UI copy, Spirit tone of voice, persona voice variables
 
 ## Components
 - [Catalog](components/overview.md): every component, its synonyms and the file to read
-- [Blocks](components/blocks.md): Hero amount, Action row, List group, Bottom chat, Option sheet — build screens from these first
-- [Controls & feedback](components/controls.md): toggle, checkbox/radio, progress, badge, alert, empty state, search, avatar group…
+- [Properties](components/_properties.md): every property and variant value (generated from Figma)
+- [Blocks](components/blocks.md): Hero amount, Action row, List group, Bottom chat, Option sheet
+- [Icons](components/icons.md): which SF outline icon means what
+- [Controls & feedback](components/controls.md): toggle, selection, progress, badge, alert, empty state, search…
 
 ## Recipes
-- [Recipes index](recipes/overview.md): home feed, account, card screen, picker, send/top up (amount → confirm), Spirit chat answer
+- [Recipes index](recipes/overview.md): account, card, profile, settings, transactions, picker, money move, home feed, chat answer — each with a spec to start from
 
-## Skills
-- [build-screen](.claude/skills/build-screen/SKILL.md): one screen from a text request
-- [build-flow](.claude/skills/build-flow/SKILL.md): a flow from a brief
-- [audit-screen](.claude/skills/audit-screen/SKILL.md): check and fix a screen; script in `scripts/audit-screen.js`
+## Scenarios (flows)
+- [Template](scenarios/_template.md); [Freeze card](scenarios/freeze-card.md) + [spec](scenarios/freeze-card.json); [Split bill](scenarios/split-bill.md)
+
+## Skills and critics
+- [build-screen](.agents/skills/build-screen/SKILL.md), [build-flow](.agents/skills/build-flow/SKILL.md), [audit-screen](.agents/skills/audit-screen/SKILL.md), [sync-library](.agents/skills/sync-library/SKILL.md), [ds-doctor](.agents/skills/ds-doctor/SKILL.md), [report-friction](.agents/skills/report-friction/SKILL.md), [run-evals](.agents/skills/run-evals/SKILL.md)
+- Critics: [screen-critic](agents/screen-critic.md), [flow-reviewer](agents/flow-reviewer.md), [domain-critic](agents/domain-critic.md), [rules-critic](agents/rules-critic.md)
+
+## Tools
+- `scripts/lint-spec.mjs`, `scripts/build-call.mjs`, `scripts/figma/render.js` — spec → Figma
+- `scripts/figma/audit-screen.js`, `scripts/figma/audit-flow.js` — checks in Figma
+- `scripts/figma/dump-library.js`, `scripts/merge-library.mjs`, `scripts/check-docs.mjs`, `scripts/sync-agents.mjs` — keep docs and Figma in sync
+- [Figma Plugin API gotchas](docs/figma-api.md)
 
 ## Optional
-- [Evals](evals/rubric.md): how a screen is scored; [prompts](evals/prompts.md) to test with
-- [Research](research/ai-ready-ds-research.md): how AI-ready design systems work (Russian)
-- [Research · screen quality](research/screen-quality-research.md): how to get good-looking screens from agents (Russian)
+- [Evals](evals/rubric.md): how a screen is scored; [prompts](evals/prompts.md); [log](evals/log.md)
+- [Research](research/ai-ready-ds-research.md), [screen quality research](research/screen-quality-research.md) (Russian)

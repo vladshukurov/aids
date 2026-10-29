@@ -1,5 +1,6 @@
 # Recipe: Spirit chat answer
 
+Specs: `specs/examples/chat-salary.json` (one fact), `chat-food-october.json` (numbers), `chat-spain-topup.json` (money check, persona switch, after the action). In a spec you list answer parts; the renderer applies the spacing pair rule below.
 Figma examples: `Chat · one fact_example`, `Chat · numbers_example`, `Chat · money check_example` (product screens with absolute layout — read them for content and spacing, but build yours with auto layout as below).
 Full rules: [../components/chat.md](../components/chat.md), voice: [../foundations/voice.md](../foundations/voice.md), data: [../foundations/persona.md](../foundations/persona.md).
 

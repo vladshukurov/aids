@@ -22,7 +22,7 @@ Alex paid €84.00 for dinner at Tavola last night with Anna and Dima. Alex want
 - Undo within the session: chip "Undo" cancels requests.
 
 ## Numbers
-- Total €84.00 (Tavola, 25 Oct, 21:40, card •••• 0020).
+- Total €84.00 (Tavola, 25 Oct, 21:40, card •••• 1255 on Main account).
 - 3 people × €28.00. Alex keeps €28.00; requests: Anna €28.00, Dima €28.00 → "Request €56".
 - S3 progress: €0 of €56 back (0%), both Pending.
 - Anna Costa and Dima Ivanov are on re:verse (requests in-app, no fee).

@@ -1,0 +1,22 @@
+{
+  "id": "account-usd",
+  "name": "USD account",
+  "archetype": "object",
+  "caption": "USD account: the balance is the sum of three wallets; the card spends from it. Details and IBAN live under ···.",
+  "topbar": { "back": true, "avatar": true },
+  "body": [
+    { "hero": "amount", "label": "USD account", "amount": "$313.00", "caption": "3 wallets · card •••• 0020" },
+    { "actions": [{ "label": "Top up", "icon": "plus" }, { "label": "Send", "icon": "arrow.up" }] },
+    { "group": "Wallets", "aside": "$313.00", "rows": [
+      { "title": "Tether USD", "caption": "USDT", "amount": "$200.00", "avatar": { "currency": "USDT" } },
+      { "title": "Dollar Wallet", "caption": "USD", "amount": "$100.00", "avatar": { "currency": "Dollar" } },
+      { "title": "USD Coin", "caption": "USDC", "amount": "$13.00", "avatar": { "currency": "USDC" } }
+    ] },
+    { "group": "Transactions", "aside": "View all", "rows": [
+      { "title": "Vapiano", "caption": "Dining · Yesterday, 13:05", "amount": "−$31.50", "avatar": { "merchant": "Food" } },
+      { "title": "Apple", "caption": "Subscriptions · 24 Oct", "amount": "−$2.99", "avatar": { "icon": "repeat" } },
+      { "title": "Amazon", "caption": "Shopping · 22 Oct", "amount": "−$46.20", "avatar": { "merchant": "Market" } }
+    ] }
+  ],
+  "bottom": { "chat": ["Exchange to euros", "Spending this month"] }
+}

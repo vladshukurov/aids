@@ -1,57 +1,52 @@
 ---
 name: build-screen
-description: Design and build one mobile banking screen in the re:verse DS Figma file from a text request — including screens no recipe covers ("profile", "subscriptions", "card frozen", "Spirit answer about October"). Plans the composition first, builds from blocks, then iterates with an independent visual critic. Not for multi-screen flows (build-flow) or reviewing an existing screen (audit-screen).
+description: Design and build one mobile banking screen in the re:verse DS Figma file from a text request — including screens no recipe covers ("profile", "subscriptions", "card frozen", "Spirit answer about October"). Plans the composition, writes a JSON spec, lints and renders it with the repo renderer, audits, then iterates with an independent visual critic. Not for multi-screen flows (build-flow) or reviewing an existing screen (audit-screen).
 ---
 
 # Build a screen
 
-The goal is a screen that looks designed, not assembled. Rule compliance is the floor; the critic decides when it is good.
+The goal is a screen that looks designed, not assembled. The renderer guarantees the system (instances, tokens, spacing, row rules); you are responsible for the content and the composition. The critic decides when it is good.
 
 ## 0. Setup (once per session)
-- Figma file `qUknPCIey4DG3PH19e1OmD`: `create_session`, pass `sessionId` to every Figma call. Load Figma skills `figma-use` and `figma-generate-design` (`/figma-use`, `get_figma_skill` or `skill://figma/<name>/SKILL.md`).
-- Two Figma MCP servers → `whoami` on both, use the one with an editor seat.
-- Read `CLAUDE.md`, `foundations/layout.md`, `foundations/anti-patterns.md`, `foundations/persona.md`, `components/blocks.md`, then the closest recipe in `recipes/overview.md` (if any).
+- Read `AGENTS.md`, `foundations/layout.md`, `foundations/anti-patterns.md`, `foundations/persona.md`, `specs/format.md`.
+- Figma: `create_session` with `qUknPCIey4DG3PH19e1OmD`, pass `sessionId` everywhere. Load the Figma `figma-use` skill before the first `use_figma`. Several Figma servers → `whoami` on each, use the one with a Full/Dev seat.
+- `state/library.json` has `"generated": null` → run `sync-library` first.
 
-## 1. Plan (write it in your reply before any Figma call)
-1. Archetype (layout.md §2) and the product reference to compare with (`evals/references.md`).
+## 1. Plan (write it in your reply before the spec)
+1. Archetype (layout.md §2), recipe (`recipes/overview.md`) and the spec to start from.
 2. The six answers of layout.md §1: object, hero, actions, sections, state, next step.
-3. **ASCII sketch** with zone heights and gaps, e.g.
+3. **ASCII sketch** of the zones, e.g.
 ```
-StatusBar 62 · TopBar 58 (Back, "CARD •••• 0020")
-── 40 ── Hero: Card L
-── 24 ── Actions: [Unfreeze] [Details] [···]
-── 48 ── Card: Card is frozen · … | Show PIN › | Limits › | Replace card ›
-── 48 ── Transactions · View all: Vapiano €31.50 | … (3 rows)
-Bottom chat: "Why was it declined?" "Freeze for how long?"
+TopBar "CARD •••• 0020"
+Hero: Card L (frozen)
+Actions: [Unfreeze]
+Card: Card is frozen · … | Limits › | Replace card ›
+Transactions · View all: Vapiano −$31.50 | Apple −$2.99 | Amazon −$46.20
+Bottom chat: "Undo" "I lost my card"
 ```
-4. **Data inventory:** every row's title, caption and value from `persona.md`. Captions must state a fact or a consequence.
-5. **Plan review:** read the sketch against `anti-patterns.md`. Anything default, empty, one-row, invented or Spirit-named? Fix the plan, not the screen later.
+4. **Data inventory:** every title, caption and value, each from persona.md (add a missing fact there first). Captions state a fact or a consequence.
+5. **Plan review** against anti-patterns.md: anything default, empty, one-row, invented or Spirit-named? Fix the plan now.
 
-## 2. Find components
-One batched `search_design_system` call (library is published): blocks first ("Block / List group", "Block / Hero amount"), then atoms. Results include descriptions — they are the short contract. Resolve objects by name inside your build script; never hardcode style or variable ids:
-```js
-const V = n => vars.find(v => v.name === n);   const S = n => styles.find(s => s.name === n);
-const setP = (inst, map) => { const keys = Object.keys(inst.componentProperties); const out = {};
-  for (const [k, v] of Object.entries(map)) { const key = keys.find(x => x === k || x.startsWith(k + '#')); if (key) out[key] = v; }
-  inst.setProperties(out); };
-```
-Exposed nested instances (Row 1–5 in a List group, Action 1/2, Header, Avatar and Toggle inside Cell) are found with `findOne(n => n.name === 'Row 1')` and set with `setP` on them. Icons: swap the icon inside an Avatar plate with an `SF / *` outline icon (one family per screen). Search all pages for icons — some live on `_internal`.
-Working in another file → import by the keys search returns (`importComponentSetByKeyAsync` …).
+## 2. Spec → lint → render
+1. Copy the closest spec from `specs/examples/` to `specs/work/<id>.json` and write yours (`specs/format.md`).
+2. `node scripts/lint-spec.mjs specs/work/<id>.json` → 0 errors. Treat warnings as questions you must answer.
+3. `node scripts/build-call.mjs specs/work/<id>.json --section "Polygon · <task> · <date>"`.
+4. Read `.out/call.js` and pass it whole as `code` to one `use_figma` call (`skillNames: "figma-use"`).
+5. Read the result: `screens[].frame` ids, inline screenshots, `log`. Every log line is a defect: missing component/property → `sync-library` or a renderer fix; unknown icon → pick from `components/icons.md`. Re-render with `--replace` after fixing.
 
-## 3. Build on page Polygon
-- Frame 402 wide, vertical auto layout, `background/primary`, height 874 or taller if content needs it. Chat: `Color` mode dark + `Spirit / Chat background` first.
-- Blocks first: `Block / Hero amount` (or Card L / custom hero), `Block / Action row`, `Block / List group` ×2–4, `Block / Bottom chat` (absolute at the bottom; bottom space ≥ its height, so the last element clears it when scrolled to the end). Sheets: `Block / Option sheet` over the dimmed object screen.
-- Spacing exactly as layout.md §3 (40–60 / 24 / 48 / 12 / 20), bound to `space/*`.
-- One `use_figma` call for the whole screen; return the frame id.
+## 3. Check
+1. Paste `scripts/figma/audit-screen.js` with `FRAME_IDS = ['<id>']` into `use_figma` → fix every error (in the spec when possible).
+2. Look at the inline screenshot against anti-patterns.md and layout.md §7: truncation, overlaps, mixed icons, empty bands, a weak hero. Fix obvious slips first.
 
-## 4. Check, then critic
-1. Run `scripts/audit-screen.js` in its own call; fix every error.
-2. Screenshot at 0.5 and check `anti-patterns.md` yourself; fix obvious slips (truncation, overlaps, mixed icons).
-3. **Independent critic:** spawn the `screen-critic` agent with the frame id, archetype and reference. Never grade visual quality yourself — builders overrate their own work.
-4. Apply its fixes on a **copy** of the frame (`<name> · round N`), re-run the critic on the copy. Keep a round only if its average went up. Max 3 rounds; ship when every score ≥ 8.
-5. Report: plan, components, audit result, critic scores per round, what you could not do or guessed.
+## 4. Critic rounds
+1. Spawn an **independent** critic with `agents/screen-critic.md` (Claude Code: subagent `screen-critic`; Codex: `codex exec` with that file as the prompt plus the inputs; otherwise ask the person to run it in a fresh session). Inputs: frame id, archetype, the reference from `evals/references.md`. Never grade your own visual quality.
+2. Apply its fixes **in the spec**, re-render with `--replace` into a copy section `Polygon · <task> · round N`, re-run the critic with the previous scores. Keep a round only if its average went up. Max 3 rounds; ship when every score ≥ 8.
+3. Verify each finding on the screenshot before acting — critics can be wrong; product rules beat critics.
+
+## 5. Report
+Plan, spec path, frame ids, audit result, critic scores per round, what the renderer could not do (component blocks, custom code), facts you added to persona.md. If the screen type had no recipe and shipped, add the recipe and move the spec to `specs/examples/`.
 
 ## Never
-- Draw a component, icon, glow or gradient by hand when one exists.
+- Hand-code a screen the renderer can build; extend the renderer instead (its own change, with `check-docs`).
 - Add a success screen. Name "Spirit" outside the chat. Use green for anything but incoming money.
-- Leave a spacer pushing a button down on an Object screen, or a one-row section.
+- Leave a one-row section, a spacer pushing a button down, or an invented fact.

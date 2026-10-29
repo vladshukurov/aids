@@ -1,0 +1,347 @@
+{
+  "flow": "Freeze card",
+  "screens": [
+    {
+      "id": "c1",
+      "name": "C1 · Card frozen",
+      "archetype": "object",
+      "caption": "C1. Freeze happens at once, no confirmation: the card shows ice, the state is the first row, Undo is the first chip.",
+      "topbar": {
+        "title": "CARD •••• 0020",
+        "back": true
+      },
+      "body": [
+        {
+          "hero": "card",
+          "last4": "0020",
+          "layout": "E",
+          "network": "Visa",
+          "design": "Trickster",
+          "frozen": true
+        },
+        {
+          "actions": [
+            "Unfreeze"
+          ]
+        },
+        {
+          "group": "Card",
+          "rows": [
+            {
+              "title": "Card is frozen",
+              "caption": "Payments and withdrawals are declined",
+              "chevron": false,
+              "avatar": {
+                "icon": "snowflake"
+              }
+            },
+            {
+              "title": "Limits",
+              "caption": "Online $2,500 a month",
+              "avatar": {
+                "icon": "slider.horizontal.3"
+              }
+            },
+            {
+              "title": "Replace card",
+              "caption": "New card in 3–5 days · free",
+              "avatar": {
+                "icon": "arrow.triangle.2.circlepath"
+              }
+            }
+          ]
+        },
+        {
+          "group": "Transactions",
+          "aside": "View all",
+          "rows": [
+            {
+              "title": "Vapiano",
+              "caption": "Dining · Yesterday, 13:05",
+              "amount": "−$31.50",
+              "avatar": {
+                "merchant": "Food"
+              }
+            },
+            {
+              "title": "Apple",
+              "caption": "Subscriptions · 24 Oct",
+              "amount": "−$2.99",
+              "avatar": {
+                "icon": "repeat"
+              }
+            },
+            {
+              "title": "Amazon",
+              "caption": "Shopping · 22 Oct",
+              "amount": "−$46.20",
+              "avatar": {
+                "merchant": "Market"
+              }
+            }
+          ]
+        }
+      ],
+      "bottom": {
+        "chat": [
+          "Undo",
+          "I lost my card"
+        ]
+      },
+      "links": [
+        {
+          "from": "suggest:I lost my card",
+          "to": "c2"
+        },
+        {
+          "from": "row:Replace card",
+          "to": "c2"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "name": "C2 · Block card?",
+      "archetype": "object",
+      "caption": "C2. Blocking can't be undone, so it is the one place with an Alert. The reassurance is in the message: the virtual card keeps working.",
+      "topbar": {
+        "title": "CARD •••• 0020",
+        "back": true
+      },
+      "body": [
+        {
+          "hero": "card",
+          "last4": "0020",
+          "layout": "E",
+          "network": "Visa",
+          "design": "Trickster",
+          "frozen": true
+        },
+        {
+          "actions": [
+            "Unfreeze"
+          ]
+        },
+        {
+          "group": "Card",
+          "rows": [
+            {
+              "title": "Card is frozen",
+              "caption": "Payments and withdrawals are declined",
+              "chevron": false,
+              "avatar": {
+                "icon": "snowflake"
+              }
+            },
+            {
+              "title": "Limits",
+              "caption": "Online $2,500 a month",
+              "avatar": {
+                "icon": "slider.horizontal.3"
+              }
+            },
+            {
+              "title": "Replace card",
+              "caption": "New card in 3–5 days · free",
+              "avatar": {
+                "icon": "arrow.triangle.2.circlepath"
+              }
+            }
+          ]
+        },
+        {
+          "group": "Transactions",
+          "aside": "View all",
+          "rows": [
+            {
+              "title": "Vapiano",
+              "caption": "Dining · Yesterday, 13:05",
+              "amount": "−$31.50",
+              "avatar": {
+                "merchant": "Food"
+              }
+            },
+            {
+              "title": "Apple",
+              "caption": "Subscriptions · 24 Oct",
+              "amount": "−$2.99",
+              "avatar": {
+                "icon": "repeat"
+              }
+            },
+            {
+              "title": "Amazon",
+              "caption": "Shopping · 22 Oct",
+              "amount": "−$46.20",
+              "avatar": {
+                "merchant": "Market"
+              }
+            }
+          ]
+        }
+      ],
+      "bottom": {
+        "chat": [
+          "Undo",
+          "I lost my card"
+        ]
+      },
+      "overlay": {
+        "alert": {
+          "title": "Block this card?",
+          "message": "You can't unblock it. Your virtual card •••• 1255 keeps working",
+          "action": "Block card",
+          "cancel": "Cancel",
+          "destructive": true
+        }
+      },
+      "links": [
+        {
+          "from": "cta",
+          "to": "c3"
+        },
+        {
+          "from": "cancel",
+          "to": "c1"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "name": "C3 · Order a new card",
+      "archetype": "confirm",
+      "caption": "C3. The new card: what Alex gets, where it goes, when and for how much — then one Primary.",
+      "topbar": {
+        "title": "NEW CARD",
+        "back": true
+      },
+      "body": [
+        {
+          "hero": "card",
+          "size": "M",
+          "last4": "4417",
+          "newCard": true,
+          "layout": "E",
+          "network": "Visa",
+          "design": "Trickster"
+        },
+        {
+          "group": "Delivery",
+          "rows": [
+            {
+              "title": "Alex Morgan",
+              "caption": "Torstraße 102, 10119 Berlin",
+              "avatar": {
+                "icon": "house"
+              }
+            },
+            {
+              "title": "Free delivery",
+              "caption": "3–5 working days · by 3 Nov",
+              "chevron": false,
+              "avatar": {
+                "icon": "shippingbox"
+              }
+            }
+          ]
+        }
+      ],
+      "bottom": {
+        "cta": "Order new card"
+      },
+      "links": [
+        {
+          "from": "cta",
+          "to": "c4"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "name": "C4 · Card after",
+      "archetype": "object",
+      "caption": "C4. Alex lands back on the card, not on a success screen: blocked state, delivery progress, the card that still works.",
+      "topbar": {
+        "title": "CARD •••• 0020",
+        "back": true
+      },
+      "body": [
+        {
+          "hero": "card",
+          "last4": "0020",
+          "layout": "E",
+          "network": "Visa",
+          "design": "Trickster",
+          "frozen": true
+        },
+        {
+          "progress": {
+            "value": 25,
+            "label": "New card •••• 4417 on its way",
+            "valueText": "By 3 Nov"
+          }
+        },
+        {
+          "group": "Card",
+          "rows": [
+            {
+              "title": "Card is blocked",
+              "caption": "Payments stay declined for good",
+              "chevron": false,
+              "badge": {
+                "type": "Error",
+                "label": "Blocked"
+              },
+              "avatar": {
+                "icon": "lock"
+              }
+            },
+            {
+              "title": "Virtual card •••• 1255",
+              "caption": "Keeps working online · Main account",
+              "avatar": {
+                "icon": "creditcard"
+              }
+            }
+          ]
+        },
+        {
+          "group": "Transactions",
+          "aside": "View all",
+          "rows": [
+            {
+              "title": "Vapiano",
+              "caption": "Dining · Yesterday, 13:05",
+              "amount": "−$31.50",
+              "avatar": {
+                "merchant": "Food"
+              }
+            },
+            {
+              "title": "Apple",
+              "caption": "Subscriptions · 24 Oct",
+              "amount": "−$2.99",
+              "avatar": {
+                "icon": "repeat"
+              }
+            },
+            {
+              "title": "Amazon",
+              "caption": "Shopping · 22 Oct",
+              "amount": "−$46.20",
+              "avatar": {
+                "merchant": "Market"
+              }
+            }
+          ]
+        }
+      ],
+      "bottom": {
+        "chat": [
+          "When does it arrive?",
+          "Use my virtual card"
+        ]
+      }
+    }
+  ]
+}

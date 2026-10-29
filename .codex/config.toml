@@ -1,0 +1,6 @@
+# Codex reads this for trusted projects. Sign in once: `codex mcp login figma`.
+# Use a Figma account with a Full or Dev seat on the team that owns the DS file.
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+startup_timeout_sec = 30
+tool_timeout_sec = 120

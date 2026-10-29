@@ -1,0 +1,100 @@
+{
+  "fileKey": "qUknPCIey4DG3PH19e1OmD",
+  "fileName": "AI-ready DS",
+  "libraryName": "AI ready DS",
+  "libraryKey": "lk-70def00ccf53c6c8f0ebad8d5709219623a0828f3c9556fac747f9d6d85589aca9dc5aea8c5267a162ee7da99d348a1f289134ef6fd8ece917d82aaf0abf40aa",
+  "libraryPublished": true,
+  "updated": "2026-10-29",
+  "pages": {
+    "Cover": "14:987",
+    "Foundations": "14:988",
+    "Components": "0:1",
+    "Examples": "14:989",
+    "Polygon": "14:990",
+    "_internal": "11:46179",
+    "Archive · re:verse screens": "7:2822",
+    "Archive · Spirit chat": "7:2821"
+  },
+  "sections": {
+    "Foundations / 01 · Theme": "33:156",
+    "Foundations / 02 · Color": "33:157",
+    "Foundations / 03 · Typography": "33:603",
+    "Foundations / 04 · Space & radius": "33:695",
+    "Foundations / 05 · Mode matrix": "42:20772",
+    "Foundations / Theme preview · re:verse": "17:2",
+    "Foundations / Theme preview · Atlas": "17:102",
+    "Components / 01 · Core": "7:1169",
+    "Components / 02 · Money input": "7:1112",
+    "Components / 03 · Sheets": "32:1627",
+    "Components / 04 · Card": "14:992",
+    "Components / 05 · Chat": "14:993",
+    "Components / 06 · Chat · Answer parts": "14:994",
+    "Components / 07 · Icons · SF Symbols": "7:15982",
+    "Components / 08 · Controls & feedback": "47:1485",
+    "Examples / 01 · Base UI": "32:2784",
+    "Examples / 02 · Spirit chat": "32:2785",
+    "Examples / 03 · Spirit personas": "46:2134",
+    "Examples / 04 · Persona reference": "39:30192",
+    "Cover / Cover": "39:31962"
+  },
+  "collections": {
+    "Primitives / Color": "VariableCollectionId:10:987",
+    "Primitives / Type": "VariableCollectionId:10:1043",
+    "Type": "VariableCollectionId:10:1066",
+    "Platform": "VariableCollectionId:10:1082",
+    "Size": "VariableCollectionId:10:1086",
+    "Spirit persona": "VariableCollectionId:10:1109",
+    "Color": "VariableCollectionId:10:1117",
+    "Theme": "VariableCollectionId:16:2"
+  },
+  "theme": {
+    "modes": [
+      "re:verse",
+      "Atlas"
+    ],
+    "variables": [
+      "color/action",
+      "color/action on dark",
+      "color/accent",
+      "color/accent subtle",
+      "radius/control",
+      "radius/field",
+      "radius/card",
+      "radius/sheet",
+      "font/text",
+      "font/mono"
+    ],
+    "personaModes": [
+      "neutral",
+      "analyst",
+      "trickster",
+      "caregiver"
+    ],
+    "personaVariables": [
+      "glow/1..5",
+      "voice/style",
+      "voice/greeting",
+      "voice/confirm",
+      "voice/done",
+      "voice/reassure",
+      "voice/over budget"
+    ]
+  },
+  "examples": {
+    "Home feed_example": "21:26447",
+    "Card screen_example": "21:26527",
+    "Account_example": "21:26776",
+    "Source picker_example": "21:27134",
+    "Amount entry_example": "21:27409",
+    "Confirm_example": "31:5165",
+    "Chat · one fact_example": "21:27608",
+    "Chat · numbers_example": "21:27681",
+    "Chat · money check_example": "21:27763"
+  },
+  "photos": {},
+  "notes": [
+    "Hand-kept map of pages, sections and examples. Component ids, keys and properties live in state/library.json (generated).",
+    "photos: person name → id of a layer whose IMAGE fill is that person's photo. The renderer copies it into Avatar Style=Image. Fill it once (sync-library skill, step 4).",
+    "Screens built on Polygon are not tracked here: their ids go into the scenario md or evals/log.md."
+  ]
+}
