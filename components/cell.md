@@ -18,13 +18,14 @@ Any row in a list: transaction, account, goal, person, card, option in a sheet.
 | Checkbox Right / Checkbox Left | boolean | Selection. In sheets use Right |
 | Button | boolean | Small button on the right (e.g. "Copy") |
 | Caption Left | boolean | Shows the caption under the title |
-The avatar is an exposed nested `Avatar`: set its Style/Type/Sublogo on it. Selection on the right/left is an exposed `Selection control` named `Selection` / `Selection Left`: turn on `Checkbox Right`, then set Type (Checkbox/Radio) and State (On/Off) on the nested instance.
+| Badge | boolean | Status badge under the amount. Set Type/Label on the exposed nested `Badge` (Warning "Pending", Success "Paid"). Turn `Caption Right 2` off when the badge is on |
+The avatar is an exposed nested `Avatar`: set its Style/Type/Sublogo on it. Selection on the right/left is an exposed `Selection control` named `Selection` / `Selection Left`: turn on `Checkbox Right`, then set Type (Checkbox/Radio) and State (On/Off/Locked) on the nested instance. Locked = always selected, can’t change (e.g. "You" in a split).
 
 ## Rules
 - IMPORTANT: a row with an amount on the right has no chevron.
 - IMPORTANT: amount color: incoming money `text/positive` (green) with "+"; outgoing and "you owe" stay `text/primary`.
 - Radio/checkbox in sheets goes on the right.
-- Rows in a list are stacked with 0 gap inside a group; groups are separated by 28 and titled with a section title.
+- IMPORTANT: rows in a list are stacked with 16 between them (`space/16`); groups are separated by 28 and titled with a `Section header`.
 - Copyable values (IBAN, account number) are rows with `Button` "Copy", never chips.
 - Same person = same photo and name everywhere in the flow.
 

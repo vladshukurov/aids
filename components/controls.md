@@ -5,7 +5,7 @@ Figma: Components → section `08 · Controls & feedback`. All on tokens and The
 | Component | Use when | Key properties | Don't |
 |---|---|---|---|
 | Toggle | A setting that applies immediately (online payments, notifications) | State On/Off, Disabled | Use for choices that need a confirm button → Selection control |
-| Selection control | Checkbox = several choices (who was there); Radio = one of many with a confirm button | Type Checkbox/Radio, State Off/On/Disabled. Also exposed inside `Cell` as `Selection` (right) and `Selection Left` | Put it on the left in sheets |
+| Selection control | Checkbox = several choices (who was there); Radio = one of many with a confirm button | Type Checkbox/Radio, State Off/On/Disabled/Locked (Locked = on and can’t change). Also exposed inside `Cell` as `Selection` (right) and `Selection Left` | Put it on the left in sheets |
 | Progress | Goal progress, money back from a split, limits | Value 0/25/50/75/100 (nearest; or set Fill width to the exact %), Label, Value text, Labels | Color it green unless it is incoming money |
 | Section header | Title above a group of rows | Title, Aside (boolean), Aside text ("View all", "€2,140", "2 pending") | Use caps or the mono title style |
 | Badge | Short status: Neutral, Info (new), Warning (pending), Error (failed), Success (received money only) | Type, Label (mono caps, 1–2 words) | Use as a button |
