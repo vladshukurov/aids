@@ -32,8 +32,22 @@
     "Theme": "VariableCollectionId:16:2"
   },
   "theme": {
-    "modes": ["re:verse", "Atlas"],
-    "variables": ["color/action", "color/action on dark", "color/accent", "color/accent subtle", "radius/control", "radius/field", "radius/card", "radius/sheet", "font/text", "font/mono"]
+    "modes": [
+      "re:verse",
+      "Atlas"
+    ],
+    "variables": [
+      "color/action",
+      "color/action on dark",
+      "color/accent",
+      "color/accent subtle",
+      "radius/control",
+      "radius/field",
+      "radius/card",
+      "radius/sheet",
+      "font/text",
+      "font/mono"
+    ]
   },
   "components": {
     "Card": "7:15132",
@@ -46,7 +60,37 @@
     "MD / Block": "7:18215",
     "Suggest": "7:19705",
     "Chip": "7:19724",
-    "action button": "7:20486",
-    "Answer parts frame": "7:3893"
+    "Answer parts frame": "7:3893",
+    "Button": "7:1182",
+    "Cell": "7:1482",
+    "Cell Small": "7:1513",
+    "Avatar": "7:1557",
+    "Sublogo": "7:1523",
+    "Text Field": "7:1630",
+    "Select": "7:1695",
+    "TopBar": "7:1433",
+    "Title": "7:1440",
+    "BottomBar": "7:1444",
+    "SheetBar": "7:1460",
+    "StatusBar": "7:1247",
+    "HomeIndicator": "7:1245",
+    "Keyboard": "7:1249",
+    "Amount": "7:1135",
+    "Segmented control": "7:1421",
+    "Sheet - Full Screen": "7:1745",
+    "Top up / From": "7:1750",
+    "Action / round": "7:15995",
+    "Action button": "7:20486"
+  },
+  "examples": {
+    "Home feed_example": "21:26447",
+    "Card screen_example": "21:26527",
+    "Account_example": "21:26776",
+    "Source picker_example": "21:27134",
+    "Amount entry_example": "21:27409",
+    "Confirm_example": "21:27503",
+    "Chat · one fact_example": "21:27608",
+    "Chat · numbers_example": "21:27681",
+    "Chat · money check_example": "21:27763"
   }
 }
