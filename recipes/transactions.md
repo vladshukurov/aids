@@ -1,6 +1,6 @@
 # Recipe: Transactions list
 
-Archetype List. Build from groups; no dedicated spec yet.
+Spec: `specs/examples/transactions.json` · archetype List
 
 ## When
 All payments of an account or card, "history", "what did I pay yesterday".

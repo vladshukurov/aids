@@ -8,7 +8,8 @@ A recipe says which blocks a screen type has, in which order, with which data. E
 | card, card details, freeze / block / replace card | [card-screen.md](card-screen.md) | `scenarios/freeze-card.json` (c1, c4) |
 | profile, me, personal details | [profile.md](profile.md) | `specs/examples/profile.json` |
 | settings, notifications, privacy, any list of switches | [settings.md](settings.md) | `specs/examples/notifications.json` |
-| transactions, history, payments list | [transactions.md](transactions.md) | — (groups by day, see recipe) |
+| transactions, history, payments list | [transactions.md](transactions.md) | `specs/examples/transactions.json` |
+| goal, savings, "Spain trip" | [goal.md](goal.md) | `specs/examples/goal.json` |
 | choose source / account / recipient, picker, list in a sheet | [picker.md](picker.md) | `specs/examples/send-confirm.json` (sheet) |
 | send money, top up, enter amount, confirm payment | [money-move.md](money-move.md) | `specs/examples/send-confirm.json` |
 | home, feed, "what's new", insight | [home-feed.md](home-feed.md) | — (component blocks, see recipe) |

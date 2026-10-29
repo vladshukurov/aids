@@ -26,3 +26,7 @@ After each `run-evals`, update the table below so critics find the latest golden
 | C1–C4 Freeze card | 91:4069, 91:4784, 91:5396, 91:5720 | scenarios/freeze-card.json |
 | Chat · one fact / numbers | 86:6530, 86:6627 | specs/examples/chat-salary.json, chat-food-october.json |
 | Chat · money check (neutral, caregiver), after | 86:6739, 86:6952, 86:7135 | specs/examples/chat-spain-topup.json |
+| Chat · money check (analyst, trickster) | 96:5972, 96:6190 | same spec, `persona` changed |
+| Spain trip (goal) | 96:4070 | specs/examples/goal.json |
+| Transactions | 96:6455 | specs/examples/transactions.json |
+| C1 · Atlas | 96:5386 | scenarios/freeze-card.json c1, `theme: Atlas` |

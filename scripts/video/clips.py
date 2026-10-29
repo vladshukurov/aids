@@ -15,7 +15,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 FPS = 30
 BG = (244, 244, 242)
 INK, GREY, MUTE = (22, 22, 20), (128, 128, 124), (178, 178, 174)
-SHOTS, OUT = sys.argv[1], sys.argv[2]
+SHOTS = OUT = None
+def setup(shots, out):
+    global SHOTS, OUT
+    SHOTS, OUT = shots, out
 SANS = '/Library/Fonts/SF-Pro-Display-Regular.otf'
 MONO = '/System/Library/Fonts/SFNSMono.ttf'
 _fonts = {}
@@ -103,7 +106,7 @@ _shots = {}
 def shot(name):
     if name not in _shots: _shots[name] = Image.open(os.path.join(SHOTS, name + '.png')).convert('RGB')
     return _shots[name]
-PIN = {'profile': 1262, 'profile-atlas': 1262, 'account': 940, 'c1': 1012, 'c4': 934}
+PIN = {'profile': 1262, 'profile-atlas': 1262, 'account': 940, 'c1': 1012, 'c1-atlas': 1012, 'c4': 934, 'goal': 940}
 _bands = {}
 def _band(sw, hpx, down):
     if (sw, hpx, down) not in _bands:
@@ -446,5 +449,6 @@ def clip_hero():
 CLIPS = {'01-ask': clip_ask, '02-spec-to-screen': clip_spec_to_screen, '03-flow': clip_flow,
          '04-switch': clip_switch, '05-library': clip_library, 'hero': clip_hero}
 if __name__ == '__main__':
+    setup(sys.argv[1], sys.argv[2])
     for name in (sys.argv[3:] or CLIPS):
         CLIPS[name](); print('frames:', name, flush=True)

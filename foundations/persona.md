@@ -53,6 +53,7 @@ Every screen uses the same person on the same day. Take every name, number and d
 
 ## Goals and budget
 - Goal "Spain trip": €400 of €3,500, €150 a month on the 1st, ready Sep 2027.
+- Spain trip history: +€150.00 on 1 Oct and 1 Sep (monthly top-up from Main account), +€100.00 on 14 Aug (first top-up). Sum €400.
 - October budget: €2,140 spent of €2,400, €43 over at this pace, mostly Dining; salary €2,400 lands today (26 Oct) from Kraft & Co.
 - October by category: Dining €612, Groceries €388, Transport €58, Subscriptions €41, Shopping €320, Other €721 (sum €2,140).
 - September for comparison: Dining €540, Groceries €402.

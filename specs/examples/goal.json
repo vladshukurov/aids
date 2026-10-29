@@ -1,0 +1,93 @@
+{
+  "id": "goal",
+  "name": "Spain trip",
+  "archetype": "object",
+  "caption": "Goal: how much is there, the plan that gets it there, and every top-up. Withdraw sits next to Top up because it is the person's money.",
+  "topbar": {
+    "back": true
+  },
+  "body": [
+    {
+      "hero": "amount",
+      "label": "Spain trip",
+      "amount": "€400.00",
+      "caption": "of €3,500 · ready Sep 2027"
+    },
+    {
+      "actions": [
+        {
+          "label": "Top up",
+          "icon": "plus"
+        },
+        {
+          "label": "Withdraw",
+          "icon": "arrow.up"
+        }
+      ]
+    },
+    {
+      "group": "Plan",
+      "rows": [
+        {
+          "title": "Monthly top-up",
+          "caption": "€150 on the 1st · from Main",
+          "avatar": {
+            "icon": "calendar"
+          }
+        },
+        {
+          "title": "Ready by Sep 2027",
+          "caption": "At €150 a month",
+          "chevron": false,
+          "avatar": {
+            "icon": "chart.line.uptrend"
+          }
+        },
+        {
+          "title": "Reminder",
+          "caption": "A day before €150 goes in",
+          "toggle": true,
+          "avatar": {
+            "icon": "bell"
+          }
+        }
+      ]
+    },
+    {
+      "group": "History",
+      "aside": "View all",
+      "rows": [
+        {
+          "title": "Monthly top-up",
+          "caption": "1 Oct · from Main account",
+          "amount": "+€150.00",
+          "avatar": {
+            "icon": "arrow.down.left"
+          }
+        },
+        {
+          "title": "Monthly top-up",
+          "caption": "1 Sep · from Main account",
+          "amount": "+€150.00",
+          "avatar": {
+            "icon": "arrow.down.left"
+          }
+        },
+        {
+          "title": "First top-up",
+          "caption": "14 Aug · from Main account",
+          "amount": "+€100.00",
+          "avatar": {
+            "icon": "arrow.down.left"
+          }
+        }
+      ]
+    }
+  ],
+  "bottom": {
+    "chat": [
+      "Can I go sooner?",
+      "Pause for a month"
+    ]
+  }
+}

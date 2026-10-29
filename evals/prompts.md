@@ -15,12 +15,13 @@ Typical client requests. Run each through `build-screen` (or `build-flow` for F*
 | 8 | Spirit answer: "How much did I spend on food in October?" | `specs/examples/chat-food-october.json` |
 | 9 | Spirit answer: "Can I afford a €900 laptop this month?" | — |
 | 10 | Spirit answer: confirm moving €100 to the Spain trip goal. | `specs/examples/chat-spain-topup.json` → chat-spain-check |
-| 11 | Transactions list for today and yesterday. | — (recipe transactions.md) |
+| 11 | Transactions list for today and yesterday. | `specs/examples/transactions.json` |
 | 12 | Settings menu with 6 rows. | `specs/examples/profile.json` (menu part) |
 | 13 | Empty state: no linked banks in "Top up from". | — |
 | 14 | Profile. | `specs/examples/profile.json` |
 | 15 | Notification settings. | `specs/examples/notifications.json` |
 | 16 | Spirit answer: "When does my salary land?" | `specs/examples/chat-salary.json` |
+| 17 | Goal screen for Spain trip. | `specs/examples/goal.json` |
 
 ## Flows (build-flow)
 - F1. Split a dinner bill of €84 with two friends. → `scenarios/split-bill.md`

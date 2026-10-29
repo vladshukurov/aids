@@ -279,6 +279,7 @@ async function group(b, sp) {
     const h = sub(g, 'Header');
     if (h) { if (b.group) set(h, { Title: b.group, Aside: !!b.aside, 'Aside text': b.aside || '' }, 'Section header'); else h.visible = false; }
     for (let k = 0; k < rows.length; k++) await row(sub(g, 'Row ' + (k + 1)), rows[k], sp);
+    for (let k = rows.length; k < 2; k++) { const r = sub(g, 'Row ' + (k + 1)); if (r) r.visible = false; }  // Row 1–2 have no boolean
     g.name = 'Group · ' + (b.group || 'untitled');
     return g;
   }

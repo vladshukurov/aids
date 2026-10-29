@@ -1,0 +1,103 @@
+{
+  "id": "transactions",
+  "name": "Transactions",
+  "archetype": "list",
+  "caption": "All payments by day, newest first: search and filters on top, money in is green, nothing else is.",
+  "topbar": {
+    "title": "TRANSACTIONS",
+    "back": true
+  },
+  "body": [
+    {
+      "search": "Merchant or amount"
+    },
+    {
+      "chips": [
+        {
+          "label": "All",
+          "selected": true
+        },
+        "Money in",
+        "•••• 0020",
+        "•••• 1255"
+      ]
+    },
+    {
+      "group": "Today",
+      "allowSingle": true,
+      "rows": [
+        {
+          "title": "Rewe",
+          "caption": "Groceries · 08:30",
+          "amount": "−€18.40",
+          "avatar": {
+            "merchant": "Market"
+          }
+        }
+      ]
+    },
+    {
+      "group": "Yesterday",
+      "rows": [
+        {
+          "title": "Tavola",
+          "caption": "Dining · 21:40",
+          "amount": "−€84.00",
+          "avatar": {
+            "merchant": "Food"
+          }
+        },
+        {
+          "title": "Vapiano",
+          "caption": "Dining · 13:05",
+          "amount": "−$31.50",
+          "avatar": {
+            "merchant": "Food"
+          }
+        }
+      ]
+    },
+    {
+      "group": "24 Oct",
+      "rows": [
+        {
+          "title": "Lidl",
+          "caption": "Groceries · 18:20",
+          "amount": "−€24.90",
+          "avatar": {
+            "merchant": "Market"
+          }
+        },
+        {
+          "title": "Apple",
+          "caption": "Subscriptions · 11:02",
+          "amount": "−$2.99",
+          "avatar": {
+            "icon": "repeat"
+          }
+        }
+      ]
+    },
+    {
+      "group": "22 Oct",
+      "rows": [
+        {
+          "title": "Dima Ivanov",
+          "caption": "Transfer in",
+          "amount": "+€25.00",
+          "avatar": {
+            "person": "Dima Ivanov"
+          }
+        },
+        {
+          "title": "Amazon",
+          "caption": "Shopping",
+          "amount": "−$46.20",
+          "avatar": {
+            "merchant": "Market"
+          }
+        }
+      ]
+    }
+  ]
+}
